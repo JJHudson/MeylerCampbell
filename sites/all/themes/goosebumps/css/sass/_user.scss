@@ -1,0 +1,33 @@
+.form-item {
+	padding: 0 0 20px 0;
+
+	label {
+		display: block;
+	}
+
+	.description {
+		color: $grey;
+		font-size: 12px;
+	}
+}
+
+.form-submit {
+	@include transition();
+
+	background: $black;
+	box-sizing: border-box;
+	border: 2px $black solid;
+	border-radius: 0;
+	color: $gold;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: $tg_bold;
+	outline: none;
+	padding: 10px 25px 4px;
+	text-transform: uppercase;
+
+	&:hover {
+		color: $black;
+		background: $gold;
+	}
+}

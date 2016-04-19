@@ -1,0 +1,67 @@
+.section {
+	@extend %cf;
+
+	margin-bottom: 75px;
+	position: relative;
+
+	@include media('<tablet') {
+		margin-bottom: 30px;
+	}
+}
+
+.section--hero {
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+	margin-bottom: 0;
+	width: 100%;
+
+	.quote {
+		@extend %max-width;
+
+		position: relative;
+		height: 100vh;
+	}
+
+	.intro {
+		box-sizing: border-box;
+		color: $white;
+		position: absolute;
+		right: 0;
+		top: 25%;
+		width: 27%;
+
+		h2 {
+			@include font-size(30);
+			@include line-height(32);
+
+			margin-bottom: 30px;
+		}
+
+		span {
+			margin: 0 4px 0 -18px;
+		}
+
+		@include media('<tablet') {
+			display: none;
+		}
+	}
+
+	@include media('<tablet') {
+
+		height: 80vh;
+
+	}
+}
+
+.section--intro {
+	margin-top: 75px;
+
+	@include media('<tablet') {
+		margin-top: 0px;
+	}
+	
+}

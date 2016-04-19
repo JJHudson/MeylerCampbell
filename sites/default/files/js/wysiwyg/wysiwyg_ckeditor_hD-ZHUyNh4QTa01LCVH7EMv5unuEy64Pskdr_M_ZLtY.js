@@ -1,0 +1,1 @@
+window.CKEDITOR_BASEPATH = '/dev/meylercampbell/sites/all/libraries/ckeditor/';

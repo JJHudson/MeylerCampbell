@@ -1,0 +1,144 @@
+.logo-home {
+	fill: $white;
+	min-width: 100px;
+	position: relative;
+	top: 0;
+	-ms-transition: fill 500ms;
+	-webkit-transition: fill 500ms;
+	transition: fill 500ms;
+	width: 8vw;
+
+	&.logo-home__fixed {
+		position: fixed;
+		top: 70px;
+	}
+
+	&.logo-home__black {
+		fill: $black;
+	}
+
+	&.logo-home__grey {
+		fill: $grey;
+	}
+
+	@include media('<tablet') {
+		fill: $black !important;
+		padding: 0 0 15px 0;
+		position: relative !important;
+		top: 0 !important;
+
+	}
+}
+
+.logo-main {
+	fill: $black;
+	min-width: 100px;
+	position: relative;
+	top: 0;
+	-ms-transition: fill 500ms;
+	-webkit-transition: fill 500ms;
+	transition: fill 500ms;
+	width: 8vw;
+}
+
+.nav {
+	@include transition();
+
+	background: $white;
+	display: block;
+	left: 0;
+	position: fixed;
+	top: -60px;
+	width: 100%;
+	z-index: $level-5;
+
+	@include media('>tablet') {
+
+		&.nav--active {
+			box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+			top: 0;
+		}
+
+		&.nav--fixed {
+			box-shadow: 2px 2px 2px rgba(0,0,0,0.1) !important;
+			top: 0 !important;
+		}
+	}
+
+
+	@include media('<tablet') {
+		left: 0;
+		height: 100%;
+		top: -100% !important;
+		width: 100%;
+
+		&.nav--mobile {
+			top: 0 !important;
+		}
+	}
+}
+
+.menu-wrapper {
+	@extend %max-width;
+}
+
+.menu {
+	@extend %cf;
+
+	float: left;
+	padding: 0 0 15px 0;
+}
+
+.menu__item {
+	@include font-size(15);
+ 	@include line-height(15);
+
+ 	float: left;
+ 	padding: 0 20px 0 0;
+
+ 	@include media('<desktop') {
+ 		padding: 0 15px 0 0
+ 	}
+
+ 	@include media('<tablet') { 
+ 		@include font-size(20);
+ 		@include line-height(60);
+
+ 		text-align: center;
+ 		width: 100%;
+ 	}
+
+}
+
+.close {
+	display: none;
+
+	@include media('<tablet') { 
+		@include font-size(30);
+ 		@include line-height(30);
+ 		@include rotate(45deg);
+
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		z-index: $level-6;
+	}
+
+}
+
+.burger {
+	cursor: pointer;
+	display: block;
+	float: right;
+	font-size: 27px;
+
+	@include media('>tablet') {
+		display: none;
+	}
+}
+
+
+
+
+

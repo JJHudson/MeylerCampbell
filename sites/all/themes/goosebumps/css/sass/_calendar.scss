@@ -1,0 +1,210 @@
+.calendar {
+	@extend %cf;
+
+	margin-top: -15px;
+}
+
+.calendar__item {
+	@include font-size(171);
+	@include line-height(111);
+
+	border-bottom: 1px #1c1c1c solid;
+	border-top: 1px #1c1c1c solid;
+	box-sizing: border-box;
+	color: rgba(0,0,0,0.05);
+	display: block;
+	float: left;
+	font-family: $tg_condensed;
+	margin-top: -1px;
+	padding: 50px 0 0 0;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 20%;
+
+	// Select every first and third item in a row of five and change the colour
+	&:nth-child(5n + 1),
+	&:nth-child(5n - 2) {
+		color: rgba(0,0,0,0.1);
+	}
+
+	// Select every fifth item in a row of five then change the colour and remove the margin
+	&:nth-child(5n) {
+		color: rgba(0,0,0,0.1);
+		margin-right: 0;
+	}
+
+	// Select the first five items and remove the top border
+	&:nth-child(-n + 6) {
+		border-top: none;
+	}
+
+	// Selec last five items in the calendar and remove the bottom border
+	&:nth-last-child(-n+5) {
+		border-bottom: none;
+	}
+
+	&.calendar__item--active {
+		@include transition();
+
+		color: $grey;
+		cursor: pointer;
+
+		&:hover {
+			color: $black;
+
+			.event__titles {
+				color: $grey!important;
+			}
+		}
+	}
+
+	@include media('<desktop') {
+		@include font-size(135);
+		@include line-height(86);
+
+		padding: 40px 0 0 0;
+	}
+
+	@include media('<tablet') {
+		@include font-size(90);
+		@include line-height(58);
+
+		padding: 19px 0 0 0;
+	}
+
+}
+
+.calendar__month {
+	position: absolute;
+	top: 0;
+}
+
+.event__info-wrapper {
+	@include font-size(15);
+	@include line-height(18);
+
+	background: $black;
+	box-sizing: border-box;
+	color: $white;
+	display: none;
+	max-width: 320px;
+	position: absolute;
+	width: 100%;
+	z-index: $level-4;
+}
+
+.event__info {
+	background: $black;
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+
+	a {
+		text-decoration: underline;
+	}
+
+}
+
+.event__hide {
+	@include font-size(36);
+	@include line-height(44);
+	@include rotate(45deg);
+
+	font-family: $tg_bold;
+	color: $white;
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	z-index: $level-4;
+}
+
+.event__copy {
+	padding: 30px 15px;
+}
+
+.event__titles {
+	@include font-size(23);
+	@include line-height(23);
+	@include transition();
+
+	color: $black;
+	letter-spacing: 0;
+	position: absolute;
+	text-align: center;
+	top: 56%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+
+	h4 {
+		padding: 5px 0;
+
+		@include media('<tablet') {
+			@include font-size(25);
+			@include line-height(25);
+
+			padding: 1px 0;
+		}
+
+	}
+}
+
+
+/* LETTER SPACING FOR INDIVIDUAL NUMBERS - ONLY DONE BECUASE THEY WILL ALWAYS STAY THE SAME */
+
+	@mixin letter-spacing($size) {
+  		
+  		letter-spacing: -$size + px;
+  		padding-right: $size + px;
+
+  		.event__titles {
+			padding-left: $size / 2 + px;			
+		}
+
+		@include media('<tablet') {
+
+			letter-spacing: -$size / 2 + px;
+			padding-right: $size / 2 + px;
+
+			.event__titles {
+				padding-left: $size / 4 + px;			
+			}
+
+		}
+
+	}
+
+	.calendar__item--01 { @include letter-spacing(8); }
+	.calendar__item--02 { @include letter-spacing(3); }
+	.calendar__item--03 { @include letter-spacing(4); }
+	.calendar__item--04 { @include letter-spacing(0); }
+	.calendar__item--05 { @include letter-spacing(3); }
+	.calendar__item--06 { @include letter-spacing(2); }
+	.calendar__item--07 { @include letter-spacing(6); }
+	.calendar__item--08 { @include letter-spacing(5); }
+	.calendar__item--09 { @include letter-spacing(2); }
+	.calendar__item--10 { @include letter-spacing(17); }
+	.calendar__item--11 { @include letter-spacing(25); }
+	.calendar__item--12 { @include letter-spacing(20); }
+	.calendar__item--13 { @include letter-spacing(20); }
+	.calendar__item--14 { @include letter-spacing(17); }
+	.calendar__item--15 { @include letter-spacing(20); }
+	.calendar__item--16 { @include letter-spacing(19); }
+	.calendar__item--17 { @include letter-spacing(20); }
+	.calendar__item--18 { @include letter-spacing(20); }
+	.calendar__item--19 { @include letter-spacing(20); }
+	.calendar__item--20 { @include letter-spacing(5); }
+	.calendar__item--21 { @include letter-spacing(10); }
+	.calendar__item--22 { @include letter-spacing(4); }
+	.calendar__item--23 { @include letter-spacing(5); }
+	.calendar__item--24 { @include letter-spacing(10); }
+	.calendar__item--25 { @include letter-spacing(6); }
+	.calendar__item--26 { @include letter-spacing(5); }
+	.calendar__item--27 { @include letter-spacing(8); }
+	.calendar__item--28 { @include letter-spacing(5); }
+	.calendar__item--29 { @include letter-spacing(5); }
+	.calendar__item--30 { @include letter-spacing(6); }
+	.calendar__item--31 { @include letter-spacing(12); }

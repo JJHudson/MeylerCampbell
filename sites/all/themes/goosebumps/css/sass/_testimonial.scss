@@ -1,0 +1,41 @@
+.testimonial {
+	padding: 30px 0 0;
+
+	p {
+		padding: 0;
+	}
+}
+
+.testimonial__byline {
+	@extend %cf;
+
+	border-top: 1px $black solid;
+	margin: 60px 0 0 0;
+	padding: 10px 0 0 0;
+}
+
+.testimonial--quote {
+	padding: 0 10%;
+
+	@include media('<tablet') {
+		padding: 0 5%;
+	}
+}
+
+.testimonial__quotee {
+	float: left;
+
+	strong {
+		font-weight: bold;
+	}
+}
+
+.testimonial__controls {
+	float: right;
+
+	@include media('<tablet') {
+		float: left;
+		margin: 10px 0 0 0;
+		width: 100%;
+	}
+}

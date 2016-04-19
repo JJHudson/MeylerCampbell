@@ -1,0 +1,29 @@
+name        = Goosebumps
+description = Goosebumps is a Drupal 7 theme created by Goosebumps.
+screenshot  = screenshot.png
+
+core        = 7.x
+engine      = phptemplate
+
+stylesheets[all][] = css/main.css
+
+scripts[] = js/jquery.js
+scripts[] = js/main.js
+
+regions[header]         = Header
+regions[content]        = Content
+regions[footer]         = Footer
+
+settings[zen_breadcrumb]           = yes
+settings[zen_breadcrumb_separator] = ' › '
+settings[zen_breadcrumb_home]      = 1
+settings[zen_breadcrumb_trailing]  = 0
+settings[zen_breadcrumb_title]     = 0
+settings[zen_rebuild_registry]     = 0
+
+; Information added by Drupal.org packaging script on 2014-04-30
+version = "7.x-5.5"
+core = "7.x"
+project = "goosebumps"
+datestamp = "1398864829"
+

@@ -1,0 +1,92 @@
+.alumni-download {
+	@include transition();
+
+	background: $gold;
+	border: 2px $gold solid;
+	margin-bottom: 10px;
+	text-align: center;
+
+	&:hover {
+		background: $white;
+	}
+
+	@include media('<tablet') {
+		margin: 0 0 10px 0;
+	}
+}
+
+.alumni-download__link {
+	@include transition();
+
+	box-sizing: border-box;
+	display: block;
+	height: 100%;
+	left: 0;
+	padding: 0 5px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	@include media('<tablet') {
+		height: auto;
+		padding: 10px 0;
+		position: relative;
+	}
+}
+
+.alumni-download__spacer {
+	@include media('<tablet') {
+		display: none;
+	}
+}
+
+.alumni-download__title {
+	@include transform();
+
+	font-family: $tg_bold;
+	left: 0;
+	position: absolute;
+	text-transform: uppercase;
+	top: 50%;
+	width: 100%;
+
+	@include media('<tablet') {
+		@include transform(0%);
+
+		position: relative;
+		top: 0;
+	}
+}
+
+.alumni-faq__answer {
+	display: block;
+	overflow: hidden;
+	padding: 5px 0 20px 0;
+}
+
+.alumni-faq__arrow {
+	@include transition();
+
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid $gold;
+	height: 0;
+	margin-left: 10px;
+	position: absolute;
+	top: 10px;
+	width: 0;
+
+	&.alumni-faq__arrow--active {
+		@include rotate(180deg);
+	}
+}
+
+// .alumni-faq__question {
+// 	cursor: pointer;
+// 	position: relative;
+
+// 	&.alumni-faq__question--active {
+// 		color: $gold;
+// 	}
+// }
+

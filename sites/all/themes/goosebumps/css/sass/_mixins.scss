@@ -1,0 +1,183 @@
+
+/*---------- COLOURS ----------*/
+
+	$black: #000000;
+	$blue: #6D8798;
+	$bronze: #98694C;
+	$gold: #86754E;
+	$grey: #8E8B89;
+	$white: #FFFFFF;
+
+	$color-name: 
+		'black',
+		'blue', 
+		'bronze', 
+		'gold', 
+		'grey', 
+		'white';
+
+	$colur-hex: 
+		#000000, 
+		#6D8798, 
+		#98694C, 
+		#86754E, 
+		#8E8B89, 
+		#FFFFFF;
+
+	@each $current-color in $color-name {
+	    
+	    $i: index($color-name, $current-color);
+	    
+	    .color--#{$current-color} {
+	        color: nth($colur-hex, $i);
+	    }
+
+	    .hover--#{$current-color}:hover {
+	        color: nth($colur-hex, $i);
+	    }
+
+	}
+
+
+/*---------- VARIABLES ----------*/
+	
+	$max-width: 1140px;
+
+
+/*---------- CLEARFIX ----------*/
+
+	%cf {
+		&:before,
+		&:after {
+	    	content: " ";
+	    	display: table;
+		}
+
+		&:after {
+	    	clear: both;
+		}
+	}
+
+/*---------- FONTS ----------*/
+
+	@font-face {
+	  font-family: 'Avenir';
+	  src: url('fonts/avenir.woff') format('woff'),
+	       url('fonts/avenir.ttf') format('truetype');
+	}
+
+	@font-face {
+	  font-family: 'TGLight';
+	  src: url('fonts/tg_light.woff') format('woff'),
+	       url('fonts/tg_light.ttf') format('truetype');
+	}
+
+	@font-face {
+	  font-family: 'TGCondensed';
+	  src: url('fonts/tg_condensed.woff') format('woff'),
+	       url('fonts/tg_condensed.ttf') format('truetype');
+	}
+
+	@font-face {
+	  font-family: 'TGBold';
+	  src: url('fonts/tg_bold.woff') format('woff'),
+	       url('fonts/tg_bold.ttf') format('truetype');
+	}
+
+	$avenir: 'Avenir', Arial, Helvetica, Sans-Serif;
+	$tg_bold: 'TGBold', 'Avenir', Arial, Helvetica, Sans-Serif;
+	$tg_condensed: 'TGCondensed', 'Avenir', Arial, Helvetica, Sans-Serif;
+	$tg_light: 'TGLight', 'Avenir', Arial, Helvetica, Sans-Serif;
+
+/*---------- FONT SIZE ----------*/
+
+	@function get-vw($target) {
+
+  		// 1 vw is equal to 1% of the viewport width
+  		$vw-context: (1024 * .01) * 1;
+  	
+  		@return ($target / $vw-context) * 1vw;
+
+	}
+
+	@mixin font-size($size) {
+  		
+  		font-size: get-vw($size);
+  
+  		// Prevent font-size from getting too big
+  		@include media('>desktop'){
+    		font-size: $size + px;
+  		}
+
+  		@include media('<tablet'){
+  			font-size: $size / 1.5 + px;
+  		}
+
+	}
+
+	@mixin line-height($size) {
+  		
+  		line-height: get-vw($size);
+  
+  		@include media('>desktop'){
+    		line-height: $size + px;
+  		}
+
+  		@include media('<tablet'){
+  			line-height: $size / 1.5 + px;
+  		}
+
+	}
+
+/*---------- MAXIMUM WIDTH ----------*/
+
+	%max-width {
+		box-sizing: border-box;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $max-width;
+		width: 94%;
+	}
+
+
+
+/*---------- ROTATE ----------*/
+
+	@mixin rotate($deg: 90deg) {
+		-webkit-transform: 	rotate($deg);
+		-moz-transform: 	rotate($deg);
+		-ms-transform: 		rotate($deg);
+		-o-transform: 		rotate($deg);
+		transform: 			rotate($deg);
+	}
+
+
+/*---------- TRANSITION ----------*/
+
+	@mixin transition($elem: all, $time: 250ms, $ease: ease) {
+	 	-webkit-transition: $elem $time $ease;
+		-moz-transition: 	$elem $time $ease;
+		-ms-transition: 	$elem $time $ease;
+		-o-transition: 		$elem $time $ease;
+		transition: 		$elem $time $ease;
+	}
+
+/*---------- TRANSFORM ----------*/
+
+	@mixin transform($percentage: -50%) {
+	 	-webkit-transform: 	translateY($percentage);
+		-moz-transform: 	translateY($percentage);
+		-ms-transform: 		translateY($percentage);
+		-o-transform: 		translateY($percentage);
+		transform: 			translateY($percentage);
+	}
+
+/*---------- ZINDEX ----------*/
+
+	$level-1:      9;
+	$level-2:     99;
+	$level-3:    999;
+	$level-4:   9999;
+	$level-5:  99999;
+	$level-6: 999999;
+

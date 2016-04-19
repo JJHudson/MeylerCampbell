@@ -1,0 +1,55 @@
+.button {
+	@include font-size(16);
+	@include line-height(16);
+	@include transition();
+
+	// background: $black;
+	// border: 2px $black solid;
+	// bottom: 0;
+	// color: $white;
+	// display: inline-block;
+	// font-family: $tg_bold;
+	// margin: 0 0 15px 0;
+	// padding: 8px 13px 3px;
+	// text-align: center;
+	// text-transform: uppercase;
+
+	border-bottom: 1px $black solid;
+	display: inline-block;
+	margin: 0 0 15px 0;
+
+	&:hover {
+		border-bottom: 1px $gold solid;
+		color: $gold;
+	}
+}
+
+.button--blue {
+	border-bottom: 1px $blue solid;
+	color: $blue;
+
+	&:hover {
+		border-bottom: 1px $black solid;
+		color: $black;
+	}
+}
+
+.button--gold {
+	border-bottom: 1px $gold solid;
+	color: $gold;
+
+	&:hover {
+		border-bottom: 1px $black solid;
+		color: $black;
+	}
+}
+
+.button--grey {
+	border-bottom: 1px $grey solid;
+	color: $grey;
+
+	&:hover {
+		border-bottom: 1px $black solid;
+		color: $black;
+	}
+}

@@ -1,0 +1,42 @@
+.fade{
+	@include transition(750ms);
+
+	opacity:0;
+}
+
+.fade--up {
+	-o-transform: translate3d(0,25%,0);
+	-ms-transform: translate3d(0,25%,0);
+	-webkit-transform: translate3d(0,25%,0);
+	transform: translate3d(0,25%,0);
+}
+
+.visible {
+	opacity:1;
+
+	-o-transform: none;
+	-ms-transform: none;
+	-webkit-transform: none;
+	transform: none;
+}
+
+@-webkit-keyframes pulse {
+  	0%   { left: -45px; }
+  	50% { left: -65px; }
+  	100%   { left: -45px; }
+}
+@-moz-keyframes pulse {
+  	0%   { left: -45px; }
+  	50% { left: -65px; }
+  	100%   { left: -45px; }
+}
+@-o-keyframes pulse {
+  	0%   { left: -45px; }
+  	50% { left: -65px; }
+  	100%   { left: -45px; }
+}
+@keyframes pulse {
+	0%   { left: -45px; }
+  	50% { left: -65px; }
+  	100%   { left: -45px; }
+}
