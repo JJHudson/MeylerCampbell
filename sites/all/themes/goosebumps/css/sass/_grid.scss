@@ -179,26 +179,3 @@
 		text-align: right;
 	}
 
-	.columniser__col {
-		box-sizing: border-box;
-		float: left;
-		padding: 0 10px 0 0;
-		width: 50%;
-
-		@include media('<tablet') {
-			padding: 0;
-			width: 100%;
-		}
-	}
-
-	.columniser__col--right {
-		padding: 0 0 0 10px;
-
-		@include media('<tablet') {
-			padding: 0;
-		}
-	}
-
-
-
-

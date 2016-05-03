@@ -1,0 +1,20 @@
+.thought {
+	background: $gold;
+	display: block;
+	margin-bottom: 10px;
+	height: calc(100% - 10px);
+	width: 100%;
+}
+
+.thought__title {
+	@include transform();
+
+	box-sizing: border-box;
+	color: $white;
+	left: 0;
+	padding: 10px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 100%;
+}

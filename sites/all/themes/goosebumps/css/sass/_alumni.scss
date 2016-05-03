@@ -1,18 +1,8 @@
 .alumni-download {
 	@include transition();
 
-	background: $gold;
-	border: 2px $gold solid;
+	display: inline-block;
 	margin-bottom: 10px;
-	text-align: center;
-
-	&:hover {
-		background: $white;
-	}
-
-	@include media('<tablet') {
-		margin: 0 0 10px 0;
-	}
 }
 
 .alumni-download__link {
@@ -61,7 +51,7 @@
 .alumni-faq__answer {
 	display: block;
 	overflow: hidden;
-	padding: 5px 0 20px 0;
+	padding: 0 0 20px 0;
 }
 
 .alumni-faq__arrow {

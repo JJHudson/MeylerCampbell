@@ -120,3 +120,29 @@
 [19-Apr-2016 10:38:40 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 72 bytes) in /home/goosebumps/public_html/dev/meylercampbell/includes/menu.inc on line 3813
 [19-Apr-2016 10:41:40 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 864543 bytes) in /home/goosebumps/public_html/dev/meylercampbell/includes/database/database.inc on line 2171
 [19-Apr-2016 10:42:13 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 864543 bytes) in /home/goosebumps/public_html/dev/meylercampbell/includes/database/database.inc on line 2171
+[19-Apr-2016 10:45:24 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/modules/views/handlers/views_handler_filter.inc on line 847
+[20-Apr-2016 14:53:45 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 72 bytes) in /home/goosebumps/public_html/dev/meylercampbell/includes/menu.inc on line 3803
+[20-Apr-2016 14:54:20 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 72 bytes) in /home/goosebumps/public_html/dev/meylercampbell/includes/menu.inc on line 3813
+[20-Apr-2016 16:32:46 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--insightsoverview.tpl.php on line 125
+[20-Apr-2016 16:32:48 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--insightsoverview.tpl.php on line 125
+[20-Apr-2016 16:45:38 UTC] PHP Parse error:  syntax error, unexpected 'print_r' (T_STRING) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--insightsoverview.tpl.php on line 139
+[20-Apr-2016 16:45:40 UTC] PHP Parse error:  syntax error, unexpected 'print_r' (T_STRING) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--insightsoverview.tpl.php on line 139
+[28-Apr-2016 09:37:51 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 36
+[28-Apr-2016 09:37:55 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 36
+[28-Apr-2016 09:39:42 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 73
+[28-Apr-2016 09:40:01 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 73
+[28-Apr-2016 09:40:02 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 73
+[28-Apr-2016 09:40:04 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 83
+[28-Apr-2016 09:40:14 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/html.tpl.php on line 83
+[28-Apr-2016 10:58:06 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--events.tpl.php on line 142
+[28-Apr-2016 10:58:08 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--events.tpl.php on line 142
+[28-Apr-2016 10:58:09 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--events.tpl.php on line 142
+[28-Apr-2016 10:58:11 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--events.tpl.php on line 142
+[28-Apr-2016 10:58:12 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--events.tpl.php on line 142
+[28-Apr-2016 10:58:17 UTC] PHP Parse error:  syntax error, unexpected '"' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--events.tpl.php on line 142
+[29-Apr-2016 10:19:36 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--home.tpl.php on line 502
+[29-Apr-2016 10:19:38 UTC] PHP Parse error:  syntax error, unexpected '?>' in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--home.tpl.php on line 502
+[29-Apr-2016 15:26:44 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--programme.tpl.php on line 113
+[29-Apr-2016 15:26:45 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--programme.tpl.php on line 113
+[29-Apr-2016 15:26:58 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--programme.tpl.php on line 113
+[29-Apr-2016 15:27:16 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/node--programme.tpl.php on line 113

@@ -1,13 +1,7 @@
 .gallery {
 	@extend %cf;
-
-	position: relative;
 }
 
 .gallery__item {
-	float: left;
-}
-
-.gallery__arrow {
-	cursor: pointer;
+	position: relative;
 }

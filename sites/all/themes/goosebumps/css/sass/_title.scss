@@ -40,7 +40,7 @@
 
 .title--xsmall {
 	@include font-size(27);
-	@include line-height(40);
+	@include line-height(30);
 
 	padding-bottom: 15px;
 
@@ -72,4 +72,8 @@
 
 .title--bold {
 	font-family: $tg_bold;
+}
+
+.font-12 {
+	font-size: 12px;
 }

@@ -232,6 +232,11 @@ function goosebumps_html_head_alter(&$head) {
  */
 function goosebumps_preprocess_page(&$variables, $hook) {
   // Find the title of the menu used by the secondary links.
+  $header = drupal_get_http_header("status");
+  if($header == "404 Not Found") {
+    $variables['theme_hook_suggestions'][] = 'page__404';
+  }
+  
   $secondary_links = variable_get('menu_secondary_links_source', 'user-menu');
   if ($secondary_links) {
     $menus = function_exists('menu_get_menus') ? menu_get_menus() : menu_list_system_menus();

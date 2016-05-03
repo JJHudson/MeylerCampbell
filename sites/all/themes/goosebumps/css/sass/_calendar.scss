@@ -80,6 +80,12 @@
 	top: 0;
 }
 
+.current-month {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
 .event__info-wrapper {
 	@include font-size(15);
 	@include line-height(18);

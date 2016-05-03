@@ -6,7 +6,7 @@
 	-ms-transition: fill 500ms;
 	-webkit-transition: fill 500ms;
 	transition: fill 500ms;
-	width: 8vw;
+	width: 14.6vw;
 
 	&.logo-home__fixed {
 		position: fixed;
@@ -32,13 +32,13 @@
 
 .logo-main {
 	fill: $black;
-	min-width: 100px;
+	min-width: 120px;
 	position: relative;
 	top: 0;
 	-ms-transition: fill 500ms;
 	-webkit-transition: fill 500ms;
 	transition: fill 500ms;
-	width: 8vw;
+	width: 14.6vw;
 }
 
 .nav {

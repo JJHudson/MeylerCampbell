@@ -30,6 +30,10 @@ p {
 	}
 }
 
+em {
+	font-style: italic;
+}
+
 .container {
 	@extend %cf;
 	@extend %max-width;
@@ -45,4 +49,18 @@ p {
 	z-index: $level-6;
 }
 
+.no-tablet {
+	display: block !important;
 
+	@include media('<tablet') {
+		display: none !important;
+	}
+}
+
+.no-desktop {
+	display: none !important;
+
+	@include media('<tablet') {
+		display: block !important;
+	}
+}

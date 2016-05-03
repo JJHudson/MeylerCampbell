@@ -45,74 +45,108 @@ $nodeID = node_load($node->nid);
 
         <?php 
 
-            $name = $nodeID->title;
-            $job = $nodeID->field_job_title['und'][0]['value'];
-            $role = taxonomy_term_load($nodeID->field_role['und'][0]['tid']);
-			$role = $role->name;
-            $memberSince = $nodeID->field_member_since['und'][0]['value'];
-            $bio = $nodeID->field_bio['und'][0]['value'];
-            $filename = $nodeID->field_profile_picture['und'][0]['filename'];
-            $image = base_path().'sites/default/files/styles/profile/public/'.$filename;
+            $people = views_get_view_result('people', $reset = FALSE); 
 
-        ?>
+            foreach ($people as $key => $person) {
 
-		    <div class="grid__row grid__row--margin-bottom">
+            	$name = $person->_field_data['nid']['entity']->title;
+            	$job = $person->_field_data['nid']['entity']->field_job_title['und'][0]['value'];
+            	$bio = $person->_field_data['nid']['entity']->field_intro['und'][0]['value'];
+            	$filename = $person->_field_data['nid']['entity']->field_profile_picture['und'][0]['filename'];
+            	$image = base_path().'sites/default/files/styles/profile/public/'.$filename;
+            	$link = url('node/'. $person->_field_data['nid']['entity']->nid);
+            	$memberSince = $person->_field_data['nid']['entity']->field_member_since['und'][0]['value'];
+            	$term = taxonomy_term_load($person->_field_data['nid']['entity']->field_role['und'][0]['tid']);
+				$role = $term->name;
 
-		        <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined">
+				$peopleArray[$role][] = array(
 
-		            <h3 class="title title--xsmall title--no-padding">
-		                <?= $name; ?>  
-		            </h3>
+					'name' => $name,
+					'job' => $job,
+					'bio' => $bio,
+					'filename' => $filename,
+					'image' => $image,
+					'link' => $link,
+					'membersince' => $memberSince
 
-		            <p>
-		            	<strong>
-		            	<?php
+				);
 
-		            		if(!empty($job)) {
-		            			print $job;
-		            		} else {
-		            			print $role . ' member';
-		            		}	
+			}
 
-		            		if(!empty($memberSince)) {
-		            			print ' since ' . $memberSince; 
-		            		}
+			foreach ($peopleArray as $key => $role):
 
-		            	?>
-		            	</strong>
+				$roleType = $key;
 
-		            	<p class="no-tablet">
-		            		<br />
-		            		<a href="<?= base_path(); ?>our-people" class="underlined color--black hover--gold">< Back to Our People</a>
-		            	</p>
+		?>
+				<div class="grid__row grid__row--margin-bottom">
 
-		            </p>
+		            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined">
 
-		        </div>
-
-		        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined">
-
-		            <div class="grid__col grid__col--5">
-
-		            <?php if(!empty($filename)): ?>
-
-		                <img src="<?= $image; ?>" width="100%" alt="<?= $name; ?>" class="person__image" />
-
-		                <br /><br />
-
-		            <?php endif; ?>
-
-		                <div class="columniser"><?= nl2br($bio); ?></div>
-
-		                <p class="no-desktop">
-		                	<a href="<?= base_path(); ?>our-people" class="underlined color--black hover--gold">< Back to Our People</a>
-		                </p>
+		            	<h3 class="title title--xsmall">
+		               		<?= $key; ?>
+		               	</h3>
 
 		            </div>
 
-		        </div>
+		            <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined">
 
-		    </div>
+			<?php
+
+					foreach ($role as $key_two => $person):
+
+        	?>
+
+				    	<div class="grid__col grid__col--2">
+
+				    		<a href="<?= $person['link']; ?>" class="person__block color--black hover--gold">
+
+				    			<?php if( empty($person['filename']) ): ?>
+
+				    				<img src="<?= base_path(); ?>/sites/default/files/sizer.png" width="100%" alt="<?= $person['name']; ?>" class="person__image" />
+				    				<div class="person__overlay person__overlay--visible">
+
+				    			<?php else: ?>
+
+				    				<img src="<?= $person['image']; ?>" width="100%" alt="<?= $person['name']; ?>" class="person__image" />
+				    				<div class="person__overlay">
+
+				    			<?php endif; ?>
+
+				    			<h2 class="title title--xsmall title--no-padding"><?= $person['name'] ?></h2>
+
+				    				<p>
+				    					<?php
+
+				    						if( empty($person['job']) ) {
+				    							print $roleType . ' member ';
+				    						} else {
+				    							print $person['job'] . ' ';
+				    						}
+
+				    						if( !empty($person['membersince']) ) {
+				    							print 'since '. $person['membersince'];
+				    						}
+
+				    					?>
+				    				</p>
+
+				    			</div>
+
+				    		</a>
+
+				    	</div>
+
+				      
+
+		<?php
+
+					endforeach;
+
+				print '</div></div>';
+
+			endforeach;
+
+		?>
 
     </section>
     

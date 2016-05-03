@@ -6,6 +6,7 @@ var Goosebumps = function(){
 		isScrolledIntoView();
 		fadeOutCover();
 		createGallery();
+		createTestimonials();
 		columiser();
 
 	}
@@ -20,15 +21,15 @@ var Goosebumps = function(){
 
 		$(window).on('resize', function(){
 			isScrolledIntoView();
+			createTestimonials();
 		});
-
-		//$('.columniser').columnize({ columns: 2 });
 
 		$('.tag--menu, .close, .burger').on('click', toggleMenu);
 		$('.gallery__arrow').on('click', goToNextGalleryItem);
+		$('.testimonial__arrow').on('click', goToNextTestimonial);
 		$('.calendar__item--active').on('click', showEventInfo);
 		$('.event__hide').on('click', hideEventInfo);
-		$('.alumni-faq__question').on('click', toggleFaqs);
+		$('.section--hero').on('click', goToContent);
 
 	}
 
@@ -36,30 +37,26 @@ var Goosebumps = function(){
 
 		$('.columniser').each(function() {
 
+			var s = $(this).html();
 
-			var splitChar = ". ";
-		    var wordsSplit = $(this).html().split(splitChar);
-		    var wordsCount = wordsSplit.length;
-		    var half = Math.floor(wordsCount / 2);
-		    var leftText = "";
-		    var rightText = "";
-		    for(var index = 0; index < wordsCount; index++){
-		          if(index > half){
-		               leftText += wordsSplit[index]+" ";
-		          }else{
-		               rightText += wordsSplit[index]+". ";
-		          }
-		    }
-		    $(document.createElement("div")).addClass('columniser__col columniser__col--left').html(rightText).insertBefore($(this));
-		    $(document.createElement("div")).addClass('columniser__col columniser__col--right').html(leftText).insertBefore($(this));
+			var middle = Math.floor(s.length / 2);
+			var before = s.lastIndexOf('.', middle);
+			var after = s.indexOf('.', middle + 1);
+
+			if (middle - before < after - middle) {
+			    middle = before;
+			} else {
+			    middle = after;
+			}
+
+			var s1 = s.substr(0, middle);
+			var s2 = s.substr(middle + 1);
+
+			$(document.createElement("div")).addClass('grid__col grid__col--2').html(s1).insertBefore($(this));
+		    $(document.createElement("div")).addClass('grid__col grid__col--2').html(s2).insertBefore($(this));
 		    $(this).detach();
 
-			// var textLength = $(this).html().length;
-			// 	first = $(this).html().substring(0, textLength / 2),
-			// 	second = $(this).html().substring(textLength / 2, textLength);
-
-
-			// $(this).html('<div class="columniser__col columniser__col--left">'+first+'</div><div class="columniser__col columniser__col--right">'+second+'</div>')
+		    $("p:empty").remove();
 
 		});
 	}
@@ -76,12 +73,37 @@ var Goosebumps = function(){
 
 	}
 
+	function createTestimonials() {
+
+		var maxHeight = 0;
+
+		$('.testimonial__quote').each(function(){
+
+			maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+
+			console.log($(this).height());
+
+		});
+
+
+		$('.testimonials').height(maxHeight);
+
+	}
+
 	function fadeOutCover() {
 
 		setTimeout(function(){
 			$('.cover').fadeOut(1000);
 			setLogo();
 		},750);
+
+	}
+
+	function goToContent() {
+
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 10;
+
+		$("html, body").animate({ scrollTop: h },750);
 
 	}
 
@@ -122,6 +144,43 @@ var Goosebumps = function(){
 		setTimeout(function(){
 			nextItem.fadeIn(500).removeClass('gallery__item--hidden');
 		},500);
+
+	}
+
+	function goToNextTestimonial() {
+
+		var direction = $(this).attr('data-direction'),
+			thisItem = $('.testimonial__quote--active'),
+			nextItem;
+
+		if(direction === 'next') {
+
+			if (thisItem.next('.testimonial__quote').length > 0) {
+
+				nextItem = thisItem.next('.testimonial__quote');
+
+			} else {
+
+				nextItem = $('.testimonial__quote').first();
+
+			}
+
+		}else{
+
+			if (thisItem.prev('.testimonial__quote').length > 0) {
+
+				nextItem = thisItem.prev('.testimonial__quote');
+
+			} else {
+
+				nextItem = $('.testimonial__quote').last();
+
+			}
+
+		}
+
+		thisItem.removeClass('testimonial__quote--active');
+		nextItem.addClass('testimonial__quote--active');
 
 	}
 
@@ -220,28 +279,6 @@ var Goosebumps = function(){
 			//$('.event__info-wrapper').css({ 'bottom':'0'}).fadeIn();
 		//}
 
-
-	}
-
-	function toggleFaqs() {
-
-		// if( !$(this).hasClass('alumni-faq__question--active') ) {
-
-		// 	$('.alumni-faq__answer').slideUp();
-		// 	$('.alumni-faq__arrow').removeClass('alumni-faq__arrow--active');
-		// 	$('.alumni-faq__question').removeClass('alumni-faq__question--active');
-
-		// 	$(this).addClass('alumni-faq__question--active');
-		// 	$(this).siblings('.alumni-faq__answer').slideDown();
-		// 	$(this).children('.alumni-faq__arrow').addClass('alumni-faq__arrow--active');
-
-		// }else {
-
-		// 	$('.alumni-faq__answer').slideUp();
-		// 	$('.alumni-faq__arrow').removeClass('alumni-faq__arrow--active');
-		// 	$('.alumni-faq__question').removeClass('alumni-faq__question--active');
-
-		// }
 
 	}
 

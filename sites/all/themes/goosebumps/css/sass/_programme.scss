@@ -1,0 +1,14 @@
+.structure {
+	box-sizing: border-box;
+	list-style: disc outside;
+	padding: 0 0 0 20px;
+	position: relative;
+}
+
+.structure__item {
+	padding: 0 0 10px 0;
+
+	span {
+		color: $black;
+	}
+}
