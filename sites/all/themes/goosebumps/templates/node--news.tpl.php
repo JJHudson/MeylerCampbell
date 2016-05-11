@@ -1,6 +1,49 @@
 <?php 
 
 $nodeID = node_load($node->nid);
+$author = $nodeID->field_author['und'][0]['value'];
+$body = $nodeID->field_body['und'][0]['value'];
+
+$date = explode(" ", $nodeID->field_date['und']['0']['value']);
+$date = explode("-", $date[0]);
+
+if($date[2] === '1' || $date[2] === '01' || $date[2] === '21' || $date[2] === '31') {
+	$day = $date[2].'<sup>st</sup>';
+}else if($date[2] === '2' || $date[2] === '02' || $date[2] === '22') {
+	$day = $date[2].'<sup>nd</sup>';
+}else if($date[2] === '3' || $date[2] === '03' || $date[2] === '23') {
+	$day = $date[2].'<sup>rd</sup>';
+}else{
+	$day = $date[2].'<sup>th</sup>';
+}
+
+if($date[1] === '01') {
+	$month = 'January';
+}else if($date[1] === '02') {
+	$month = 'February';
+}else if($date[1] === '03') {
+	$month = 'March';
+}else if($date[1] === '04') {
+	$month = 'April';
+}else if($date[1] === '05') {
+	$month = 'May';
+}else if($date[1] === '06') {
+	$month = 'June';
+}else if($date[1] === '07') {
+	$month = 'July';
+}else if($date[1] === '08') {
+	$month = 'August';
+}else if($date[1] === '09') {
+	$month = 'September';
+}else if($date[1] === '10') {
+	$month = 'October';
+}else if($date[1] === '11') {
+	$month = 'November';
+}else if($date[1] === '12') {
+	$month = 'December';
+}
+
+$year = $date[0];
 
 ?>
 
@@ -49,116 +92,54 @@ $nodeID = node_load($node->nid);
 
 				<h3 class="title title--xsmall">
 
-					Insight
+					<?= $nodeID->title; ?>
 
 		        </h3>
 
-		        <?= nl2br($nodeID->field_brief_description['und'][0]['value']); ?>
+		        <p><?= $author; ?><br /><em><?= $day . ' ' . $month . ' ' . $year; ?></em></p>
+
+		        <br />
+
+		        <p class="no-tablet">
+
+		            <br />
+		            <a href="<?= base_path(); ?>insight" class="underlined">< Back to Insight</a>
+		        </p>
+
+		        
 
 		    </div>
 
 		    <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined">
 
-		    	<?php 
+		    	<?php
 
-		    	$insights = views_get_view_result('insight', $reset = FALSE); 
+		    		if( count($body) > 0) {
 
-		    	foreach ($insights as $key => $insight):
+		    			print '<div class="columniser">';
 
-		    		$title = $insight->_field_data['nid']['entity']->title;
-			    	$author = $insight->_field_data['nid']['entity']->field_author['und'][0]['value'];
-			    	$type = $insight->_field_data['nid']['entity']->field_type['und'][0]['tid'];
-			    	$pullQuote = $insight->_field_data['nid']['entity']->field_pull_quote['und'][0]['value'];
-			    	$intro = $insight->_field_data['nid']['entity']->field_intro['und'][0]['value'];
-			    	$research = base_path() . 'sites/default/files/' . $insight->_field_data['nid']['entity']->field_research_paper['und'][0]['filename'];
-			    	$link = url('node/'. $insight->_field_data['nid']['entity']->nid);
+			    			print $body;
 
-			    	$date = explode(" ", $insight->_field_data['nid']['entity']->field_date['und'][0]['value']);
-					$date = explode("-", $date[0]);
+			    		print '</div>';
 
-					if($date[2] === '1' || $date[2] === '01' || $date[2] === '21' || $date[2] === '31') {
-						$day = $date[2].'<sup>st</sup>';
-					}else if($date[2] === '2' || $date[2] === '02' || $date[2] === '22') {
-						$day = $date[2].'<sup>nd</sup>';
-					}else if($date[2] === '3' || $date[2] === '03' || $date[2] === '23') {
-						$day = $date[2].'<sup>rd</sup>';
-					}else{
-						$day = $date[2].'<sup>th</sup>';
-					}
+			    		print '<p class="no-desktop"><br /><a href="'.base_path().'insight" class="underlined">< Back to Insight</a></p>';
 
-					if($date[1] === '01') {
-						$month = 'January';
-					}else if($date[1] === '02') {
-						$month = 'February';
-					}else if($date[1] === '03') {
-						$month = 'March';
-					}else if($date[1] === '04') {
-						$month = 'April';
-					}else if($date[1] === '05') {
-						$month = 'May';
-					}else if($date[1] === '06') {
-						$month = 'June';
-					}else if($date[1] === '07') {
-						$month = 'July';
-					}else if($date[1] === '08') {
-						$month = 'August';
-					}else if($date[1] === '09') {
-						$month = 'September';
-					}else if($date[1] === '10') {
-						$month = 'October';
-					}else if($date[1] === '11') {
-						$month = 'November';
-					}else if($date[1] === '12') {
-						$month = 'December';
-					}
-
-					$year = $date[0];
+		    		}
 
 		    	?>
 
-			    	<div class="grid__row grid__row--person grid__row--underlined">
+		    	<?php
 
-			    		<div class="grid__col grid__col--2">
+		    		$filename = $nodeID->field_research_paper['und'][0]['filename'];
+		    		$path = base_path() . 'sites/default/files/';
 
-			    			<a href="<?= $link; ?>" class="color--black hover--gold thought">
+		    		if($filename !== '' && $filename !== NULL) {
+		    			
+		    			print '<a href="'.$path.$filename.'" target="_blank" class="underlined">Download PDF</a>';
 
-			    				<img src="<?= base_path();?>sites/all/themes/goosebumps/img/spacer_2.png" alt="Spacer" />
+		    		}
 
-			    				<div class="title title--xsmall thought__title">“<?= strip_tags($pullQuote); ?>”</div>
-
-			    			</a>
-
-			    		</div>
-
-			    		<div class="grid__col grid__col--2">
-
-			    			<p><strong><?= strip_tags($title); ?></strong></p>
-
-			    			<p><?= strip_tags($intro); ?></p>
-
-			    			<?php if($type === '7'): ?>
-
-			    				<a href="<?= $research; ?>" class="underlined" target="_blank">Download PDF</a>
-
-			    			<?php else: ?>
-
-			    				<a href="<?= $link; ?>" class="underlined">Find out more</a>
-
-			    			<?php endif; ?>
-
-			    		</div>
-
-			    		<div class="grid__col grid__col--1">
-
-			    			<p class="font-12"><?= $author; ?><br /><br /><em><?= $day . ' ' . $month . ' ' . $year; ?></em></p>
-
-			    		</div>
-
-			    	</div>
-
-		    	<?php endforeach; ?>
-
-		        
+		    	?>
 
 		    </div>
 

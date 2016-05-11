@@ -306,7 +306,7 @@ if ( $user->uid ):
 
 	                <div class="grid__col grid__col--2">
 
-	                	<p><strong>This area is for Alumni members only.</strong></p>
+	                	<p>Our graduates enjoy 24-hour access to a wealth of specialist coaching resources and professional development tools.</p>
 
 	                	<br /><br />
 
@@ -315,6 +315,8 @@ if ( $user->uid ):
 						<br /><br />
 
 						<p>If you have forgotten your password <a href="<?= base_path(); ?>user/password" class="color--gold">click here</a> or to register a new account <a href="<?= base_path(); ?>user/register" class="color--gold">click here</a></p>
+
+                        <p>If you are not a graduate and would like to apply, please contact <a href="mailto:info@meylercampbell.com" class="color--gold">info@meylercampbell.com</a></p>
 
 	                </div>
 

@@ -5,6 +5,17 @@
 		@extend %cf;
 	}
 
+	.grid__row--underlined {
+		border-bottom-color: inherit;
+		border-bottom-style: solid;
+		border-bottom-width: 3px;
+		padding-bottom: 5px;
+
+		&:last-child {
+			border-bottom-width: 0;
+		}
+	}
+
 	.grid__row--margin-bottom {
 		margin-bottom: 30px;
 	}
@@ -99,6 +110,22 @@
 		border-top-style: solid;
 		border-top-width: 6px;
 
+		&.grid__wrapper--overlined-blue {
+			border-top-color: $blue;
+		}
+
+		&.grid__wrapper--overlined-bronze {
+			border-top-color: $bronze;
+		}
+
+		&.grid__wrapper--overlined-gold {
+			border-top-color: $gold;
+		}
+
+		&.grid__wrapper--overlined-grey {
+			border-top-color: $grey;
+		}
+
 		@include media('<tablet') {
 			border-top-width: 3px;			
 		}
@@ -178,4 +205,3 @@
 	.grid__col--right {
 		text-align: right;
 	}
-

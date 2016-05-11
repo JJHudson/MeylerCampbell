@@ -121,18 +121,18 @@ $people = views_get_view_result('person', $reset = FALSE);
 
                     <?php if($i === 0): ?>
 
-                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--no-margin grid__wrapper--overlined color--<?= $color; ?>">
+                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--no-margin grid__wrapper--overlined grid__wrapper--overlined-<?= $color; ?> color--<?= $color; ?>">
 
                     <?php else: ?>
 
-                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--offset-2 grid__wrapper--overlined color--<?= $color; ?>">
+                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--offset-2 grid__wrapper--overlined grid__wrapper--overlined-<?= $color; ?> color--<?= $color; ?>">
 
                     <?php endif; ?>
 
                         <div class="grid__col grid__col--3 color--<?= $color; ?>">
 
                             <h2 class="title title--medium">
-                                <?= $nodeID->field_programmes['und'][$i]['entity']->title; ?>
+                                <a href="<?= $link; ?>" class="color--<?= $color; ?> hover--<?= $color; ?>"><?= $nodeID->field_programmes['und'][$i]['entity']->title; ?></a>
                             </h2>
 
                         </div>
@@ -226,7 +226,7 @@ $people = views_get_view_result('person', $reset = FALSE);
     <!-- ********** CALENDAR SECTION ********** -->
     <section class="section section--calendar fade fade--up">
 
-       <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined color--grey">
+       <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--overlined-grey color--grey">
 
             <h3 class="title title--xsmall">
                 <?= $nodeID->field_section_title_4['und']['0']['value']; ?>
@@ -463,7 +463,7 @@ $people = views_get_view_result('person', $reset = FALSE);
 
         <div class="grid__row">
 
-            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined color--gold">
+            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--overlined-gold color--gold">
 
                 <h3 class="title title--xsmall">
                     <?= $nodeID->field_section_title_3['und']['0']['value']; ?>    

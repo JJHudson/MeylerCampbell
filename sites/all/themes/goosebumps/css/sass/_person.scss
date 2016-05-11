@@ -64,11 +64,11 @@
 	}
 
 	&.person__overlay--visible {
-		background: $grey;
+		background: $gold;
 		opacity: 1;
 
 		&:hover {
-			background: $gold;
+			background: $grey;
 		}
 	}
 }

@@ -79,7 +79,7 @@ $wwww_intro = $nodeID->field_wwww_intro['und'][0]['value'];
 
         <div class="grid__row">
 
-            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined">
+            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--no-height">
 
                 <h3 class="title title--xsmall">
                     Our Programmes
@@ -116,18 +116,18 @@ $wwww_intro = $nodeID->field_wwww_intro['und'][0]['value'];
 
                     <?php if($i === 0): ?>
 
-                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--no-margin grid__wrapper--overlined color--<?= $color; ?>">
+                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--no-margin grid__wrapper--overlined grid__wrapper--overlined-<?= $color; ?> color--<?= $color; ?>">
 
                     <?php else: ?>
 
-                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--offset-2 grid__wrapper--overlined color--<?= $color; ?>">
+                        <div class="grid__wrapper grid__wrapper--5 grid__wrapper--offset-2 grid__wrapper--overlined grid__wrapper--overlined-<?= $color; ?> color--<?= $color; ?>">
 
                     <?php endif; ?>
 
                         <div class="grid__col grid__col--3 color--<?= $color; ?>">
 
                             <h2 class="title title--medium">
-                                <?= $nodeID->field_programmes['und'][$i]['entity']->title; ?>
+                                <a href="<?= $link; ?>" class="color--<?= $color; ?> hover--<?= $color; ?>"><?= $nodeID->field_programmes['und'][$i]['entity']->title; ?></a>
                             </h2>
 
                         </div>

@@ -4,7 +4,7 @@ $nodeID = node_load($node->nid);
 
 if ($nodeID->title === 'Mastered') {
     $type = "gold";
-}elseif ($nodeID->title === 'blue') {
+}elseif ($nodeID->title === 'Unleashed') {
     $type = "blue";
 }else{
     $type = "black";
