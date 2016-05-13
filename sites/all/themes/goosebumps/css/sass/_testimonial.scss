@@ -12,7 +12,7 @@
 
 	@include media('<tablet') {
 		float: left;
-		margin: 10px 0 0 0;
+		margin: 60px 0 0 0;
 		width: 100%;
 	}
 }
@@ -26,8 +26,10 @@
 
 .testimonial__quote {
 	@include transition(500ms);
+	@include transform();
 
 	position: absolute;
+	top: 50%;
 	opacity: 0;
 
 	&.testimonial__quote--active {
@@ -36,7 +38,7 @@
 
 	h3 {
 		position: relative;
-		padding: 30px 0 45px 27px;
+		padding: 0 0 20px 27px;
 	}
 
 	.open-quote {
@@ -45,6 +47,10 @@
 		margin-left: -25px;
 		top: 6px;
 		position: relative;
+
+		@include media('<tablet') {
+			margin-left: -16px;
+		}
 	}
 
 	.close-quote {
@@ -52,6 +58,22 @@
 		font-size: 1.5em;
 		position: relative;
 		top: 13px;
+	}
+
+}
+
+.testimonial__byline {
+	@include transition(500ms);
+
+	position: absolute;
+	opacity: 0;
+
+	&.testimonial__byline--active {
+		opacity: 1;
+	}
+
+	@include media('<tablet') {
+		height: 50px;
 	}
 
 }

@@ -1,3 +1,7 @@
+.wrapper {
+	@extend %cf;
+}
+
 .calendar {
 	@extend %cf;
 
@@ -6,21 +10,37 @@
 
 .calendar__item {
 	@include font-size(171);
-	@include line-height(111);
+	@include line-height(171);
 
 	border-bottom: 1px #1c1c1c solid;
-	border-top: 1px #1c1c1c solid;
+	//border-top: 1px #1c1c1c solid;
 	box-sizing: border-box;
 	color: rgba(0,0,0,0.05);
 	display: block;
 	float: left;
 	font-family: $tg_condensed;
-	margin-top: -1px;
-	padding: 50px 0 0 0;
+	//margin-top: -1px;
+	//padding: 50px 0 0 0;
 	position: relative;
 	text-align: center;
 	text-transform: uppercase;
 	width: 20%;
+
+	// Only apply if using chrome on mac!
+	&.calendar__item--strange {
+		@include line-height(111);
+		padding: 50px 0 0 0;
+
+		@include media('<desktop') {
+			@include line-height(85);
+			padding: 33px 0 0 0;
+		}
+
+		@include media('<tablet') {
+			@include line-height(55);
+			padding: 20px 0 0 0;
+		}
+	}
 
 	// Select every first and third item in a row of five and change the colour
 	&:nth-child(5n + 1),
@@ -61,16 +81,12 @@
 
 	@include media('<desktop') {
 		@include font-size(135);
-		@include line-height(86);
-
-		padding: 40px 0 0 0;
+		@include line-height(135);
 	}
 
 	@include media('<tablet') {
 		@include font-size(90);
-		@include line-height(58);
-
-		padding: 19px 0 0 0;
+		@include line-height(90);
 	}
 
 }
@@ -94,8 +110,8 @@
 	box-sizing: border-box;
 	color: $white;
 	display: none;
-	max-width: 320px;
-	position: absolute;
+	margin: 20px 0 0 0;
+	position: relative;
 	width: 100%;
 	z-index: $level-4;
 }

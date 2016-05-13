@@ -1,0 +1,22 @@
+.news {
+	position: relative;
+
+	a {
+		color: $gold;
+	}
+
+	ul {
+		margin: 10px 0 0 20px;
+
+		li {
+			list-style: disc outside;
+			padding: 0 0 10px 0;
+		}
+
+	}
+}
+
+.news-image-title {
+	font-size: 14px;
+	font-style: italic;
+}

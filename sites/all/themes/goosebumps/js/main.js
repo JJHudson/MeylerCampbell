@@ -3,11 +3,12 @@ var Goosebumps = function(){
 	function init() {
 
 		bindUI();
+		checkMacChrome();
 		isScrolledIntoView();
 		fadeOutCover();
 		createGallery();
-		createTestimonials();
 		columiser();
+		sizeIframe();
 
 	}
 
@@ -22,6 +23,7 @@ var Goosebumps = function(){
 		$(window).on('resize', function(){
 			isScrolledIntoView();
 			createTestimonials();
+			sizeIframe();
 		});
 
 		$('.tag--menu, .close, .burger').on('click', toggleMenu);
@@ -31,6 +33,31 @@ var Goosebumps = function(){
 		$('.event__hide').on('click', hideEventInfo);
 		$('.section--hero').on('click', goToContent);
 
+		setTimeout(function(){
+			createTestimonials();
+		},1000);
+
+	}
+
+	function checkMacChrome() {
+
+		var isChromium = window.chrome,
+		    winNav = window.navigator,
+		    vendorName = winNav.vendor,
+		    isOpera = winNav.userAgent.indexOf("OPR") > -1,
+		    isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+		    safari = winNav.userAgent.indexOf("Safari") > -1,
+		    mac = winNav.platform.toUpperCase().indexOf('MAC'),
+		    ios = /iPhone|iPad|iPod/i.test(navigator.userAgent),
+		    android = /Android/i.test(navigator.userAgent);
+
+		// Check to see if user is using certain browsers... I know, very stupid but there is a ridiculous bug that effects line-height with this specific font on specific browsers
+
+		if( (((isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) || safari == true) && mac >=0) || ios == true || android == true ) {
+		
+			$('.calendar__item').addClass('calendar__item--strange');
+
+		}
 	}
 
 	function columiser() {
@@ -81,7 +108,7 @@ var Goosebumps = function(){
 
 			maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
 
-			console.log($(this).height());
+			maxHeight = maxHeight + 15;
 
 		});
 
@@ -101,7 +128,7 @@ var Goosebumps = function(){
 
 	function goToContent() {
 
-		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 10;
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 40;
 
 		$("html, body").animate({ scrollTop: h },750);
 
@@ -150,37 +177,45 @@ var Goosebumps = function(){
 	function goToNextTestimonial() {
 
 		var direction = $(this).attr('data-direction'),
-			thisItem = $('.testimonial__quote--active'),
-			nextItem;
+			thisQuote = $('.testimonial__quote--active'),
+			nextQuote,
+			thisByline = $('.testimonial__byline--active'),
+			nextByline;
 
 		if(direction === 'next') {
 
-			if (thisItem.next('.testimonial__quote').length > 0) {
+			if (thisQuote.next('.testimonial__quote').length > 0) {
 
-				nextItem = thisItem.next('.testimonial__quote');
+				nextQuote = thisQuote.next('.testimonial__quote');
+				nextByline = thisByline.next('.testimonial__byline');
 
 			} else {
 
-				nextItem = $('.testimonial__quote').first();
+				nextQuote = $('.testimonial__quote').first();
+				nextByline = $('.testimonial__byline').first();
 
 			}
 
 		}else{
 
-			if (thisItem.prev('.testimonial__quote').length > 0) {
+			if (thisQuote.prev('.testimonial__quote').length > 0) {
 
-				nextItem = thisItem.prev('.testimonial__quote');
+				nextQuote = thisQuote.prev('.testimonial__quote');
+				nextByline = thisByline.prev('.testimonial__byline');
 
 			} else {
 
-				nextItem = $('.testimonial__quote').last();
+				nextQuote = $('.testimonial__quote').last();
+				nextByline = $('.testimonial__byline').last();
 
 			}
 
 		}
 
-		thisItem.removeClass('testimonial__quote--active');
-		nextItem.addClass('testimonial__quote--active');
+		thisQuote.removeClass('testimonial__quote--active');
+		nextQuote.addClass('testimonial__quote--active');
+		thisByline.removeClass('testimonial__byline--active');
+		nextByline.addClass('testimonial__byline--active');
 
 	}
 
@@ -221,7 +256,7 @@ var Goosebumps = function(){
 
 	    	var introTop = ($('.section--intro').offset().top),
 	    		sectionTop = introTop - 250,
-	    		scrollPos = $(document).scrollTop() + 70;
+	    		scrollPos = $(document).scrollTop() + 40;
 
 	    	if(scrollPos < sectionTop) {
 
@@ -243,19 +278,44 @@ var Goosebumps = function(){
 
 	function setMenu() {
 
-		var introTop = ($('.section--intro').offset().top),
-		    	sectionTop = introTop - 250,
-		    	scrollPos = $(document).scrollTop() + 70;
+		if( $('.section--intro').length > 0 ) {
 
-		    if(scrollPos >= sectionTop && scrollPos <= introTop) {
+			var introTop = ($('.section--intro').offset().top),
+			    	sectionTop = introTop - 250,
+			    	scrollPos = $(document).scrollTop() + 40,
+			    	logoPos = $('.logo-main').height() + 75;
 
-		    	$('.nav').removeClass('nav--active');
+			    if(scrollPos >= sectionTop && scrollPos <= introTop) {
 
-		    }else if(scrollPos > introTop){
+			    	$('.nav').removeClass('nav--active');
 
-		    	$('.nav').addClass('nav--active');
+			    }else if(scrollPos > introTop){
 
-		    }
+			    	$('.nav').addClass('nav--active');
+
+			    }
+
+			    if(scrollPos >= logoPos) {
+			    	$('.logo--small').addClass('logo--active');
+			    } else {
+			    	$('.logo--small').removeClass('logo--active');
+			    }
+
+			}
+
+	}
+
+	function sizeIframe() {
+
+		$('.connected-iframe').load(function() {
+		    this.style.height =
+		    this.contentWindow.document.body.offsetHeight + 'px';
+		});
+
+		$('.news-iframe').load(function() {
+		    this.style.height =
+		    this.contentWindow.document.body.offsetHeight + 'px';
+		});
 
 	}
 

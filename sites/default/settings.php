@@ -301,7 +301,7 @@ $drupal_hash_salt = 'OjWJs3xaGPZGXB2saQOxIDspNfHq0h80yeIYhKAIZiI';
  */
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
-ini_set('memory_limit', '64M');
+ini_set('memory_limit', '128M');
 
 /**
  * Set session lifetime (in seconds), i.e. the time from the user's last visit

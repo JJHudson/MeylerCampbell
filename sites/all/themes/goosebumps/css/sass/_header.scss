@@ -1,17 +1,16 @@
 .logo-home {
 	fill: $white;
-	min-width: 100px;
+	height: 151.45px;
 	position: relative;
-	top: 0;
+	top: 30px;
 	-ms-transition: fill 500ms;
 	-webkit-transition: fill 500ms;
 	transition: fill 500ms;
-	width: 80%;
+	width: 220px;
 
 	&.logo-home__fixed {
 		position: fixed;
 		top: 70px;
-		width: 13.5%;
 	}
 
 	&.logo-home__black {
@@ -24,6 +23,8 @@
 
 	@include media('<tablet') {
 		fill: $black !important;
+		float: left;
+		height: 97.61px;
 		padding: 0 0 15px 0;
 		position: relative !important;
 		top: 0 !important;
@@ -33,16 +34,41 @@
 
 .logo-main {
 	fill: $black;
-	min-width: 120px;
+	height: 151.45px;
 	position: relative;
 	top: 0;
 	-ms-transition: fill 500ms;
 	-webkit-transition: fill 500ms;
 	transition: fill 500ms;
-	width: 80%;
+	width: 220px;
 
 	@include media('<tablet') {
+		float: left;
+		height: 97.61px;
 		width: 120px;
+	}
+}
+
+.logo--small {
+	@include transition;
+
+	left: 1px;
+	height: 18.59px;
+	opacity: 0;
+	position: relative;
+	top: -2px;
+	width: 36px;
+
+	&:hover {
+		fill: $gold;
+	}
+
+	&.logo--active {
+		opacity: 1;
+	}
+
+	@include media('<tablet') {
+		display: none;
 	}
 }
 
@@ -101,6 +127,10 @@
  	float: left;
  	padding: 0 20px 0 0;
 
+ 	.active {
+ 		border-bottom: 2px $gold solid;
+ 	}
+
  	@include media('<desktop') {
  		padding: 0 15px 0 0
  	}
@@ -137,6 +167,8 @@
 	display: block;
 	float: right;
 	font-size: 27px;
+	position: relative;
+	top: 10px;
 
 	@include media('>tablet') {
 		display: none;
