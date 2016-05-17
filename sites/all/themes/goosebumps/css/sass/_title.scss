@@ -20,7 +20,12 @@
 	color: $grey;
 }
 
-.title--white {
+.title--black {
+	color: $black;
+}
+
+.title--white,
+.title--strong-white strong {
 	color: $white;
 }
 
@@ -84,4 +89,20 @@
 
 .font-12 {
 	font-size: 12px;
+
+	em {
+		display: block;
+		margin-top: 10px;
+	}
+
+	@include media('<tablet') {
+
+		font-size: 14px;
+		margin-top: 15px;
+
+		em {
+			margin-top: 0;
+		}
+
+	}
 }

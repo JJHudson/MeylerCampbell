@@ -35,7 +35,7 @@
 		color: $white;
 		position: absolute;
 		right: 0;
-		bottom: 20%;
+		bottom: 10%;
 		width: 27%;
 
 		h2 {
@@ -57,7 +57,7 @@
 	@include media('<tablet') {
 		background-size: 100% auto;
 		height: 0;
-		padding-bottom: 66%;
+		padding-bottom: 56%;
 	}
 }
 

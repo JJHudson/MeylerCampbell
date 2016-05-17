@@ -52,6 +52,19 @@
 	display: block;
 	overflow: hidden;
 	padding: 0 0 20px 0;
+
+	ol, ul {
+		list-style: outside disc;
+		padding: 0 0 0 20px;
+
+		li {
+			list-style: outside disc;
+		}
+	}
+
+	a {
+		color: $gold;
+	}
 }
 
 .alumni-faq__arrow {
@@ -66,9 +79,6 @@
 	top: 10px;
 	width: 0;
 
-	&.alumni-faq__arrow--active {
-		@include rotate(180deg);
-	}
 }
 
 // .alumni-faq__question {

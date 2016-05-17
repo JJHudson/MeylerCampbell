@@ -5,3 +5,13 @@
 .gallery__item {
 	position: relative;
 }
+
+.gallery__arrows {
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+}
+
+.gallery__arrow {
+	cursor: pointer;
+}

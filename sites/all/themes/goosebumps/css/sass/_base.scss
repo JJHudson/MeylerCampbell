@@ -20,6 +20,18 @@ a {
 			border-bottom: 1px $gold solid;
 		}
 	}
+
+	&.hover--grey:hover {
+		&.underlined {
+			border-bottom: 1px $grey solid;
+		}
+	}
+
+	&.hover--blue:hover {
+		&.underlined {
+			border-bottom: 1px $blue solid;
+		}
+	}
 }
 
 p {

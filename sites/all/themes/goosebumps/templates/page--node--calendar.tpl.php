@@ -5,9 +5,9 @@
 
     // Variables
     $urlDate = $_GET['date'];
-    $urlPage = $_GET['page'];
     $token = 'DCBYYCJA4HOSK6P53WJQ';
     $id = '10012777225';
+    $userID = '169543960821';
 
     // Check if the date is set in the URL
     if(isset($urlDate) && !empty($urlDate)) {
@@ -60,11 +60,11 @@
     include('./sites/all/themes/goosebumps/eventbrite/eventbrite.php'); 
 
     // Instantiate a new object with your OAuth token.
-    $eventbrite = new eventbrite('J2U654GJNHRH2M3HJHTK');
+    $eventbrite = new eventbrite($token);
 
     // Get all the events fro the current month
-    $args = array('data' => 'search', 'params' => '?token='.$token.'&organizer.id='.$id.'&start_date.range_start='.$startDate.'&start_date.range_end='.$endDate);
-    $events = $eventbrite->events($args);
+    $args = array('data' => $userID, 'params' => 'owned_events/?token='.$token);
+    $events = $eventbrite->users($args);
 
     // Create an array for the current month
     $calendarEvents = array();
@@ -92,8 +92,8 @@
             <div class="grid__col grid__col--5">
 
                 <h3 class="title title--xsmall">
-                    Calendar<br />
-                    <span class="title--light"><?= date('F \‘y', strtotime($year.$month.'01') ); ?></span>
+                    WHAT'S ON THIS MONTH<br />
+                    <span class="title--light"><?= date('F Y', strtotime($year.$month.'01') ); ?></span>
                 </h3>
 
                 <a href="<?= base_path() ?>calendar?date=<?= $prevMonth; ?>" class="color--black hover--gold">< Prev</a> | 
@@ -118,6 +118,9 @@
                             $day = $event->start->local;
                             $day = explode("T", $day);
                             $day = explode("-", $day[0]);
+                            $thisDay = $day[2];
+                            $thisMonth = $day[1];
+                            $thisYear = $day[0];
                             $day = $day[2];
 
                             // Add the event items to a temporary array
@@ -130,26 +133,30 @@
 
                             // Add the event info to the open element
 
-                            print '<div class="event__info event__info--'.$day.'" >';
+                            if($month === $thisMonth) {
 
-                                print '<img src="'.$logo.'" width="100%" />';
+                                print '<div class="event__info event__info--'.$day.'" >';
 
-                                print '<div class="event__copy">';
-                            
-                                    print '<p><strong>01.05.16</strong></p>';
+                                    print '<img src="'.$logo.'" width="100%" />';
 
-                                    print '<p><strong>'.$name.'</strong></p>';
+                                    print '<div class="event__copy">';
+                                
+                                        print '<p><strong>'.$thisDay.'.'.$thisMonth.'.'.$thisYear.'</strong></p>';
 
-                                    print '<p>'.substr($description, 0, 140).'...</p>';
+                                        print '<p><strong>'.$name.'</strong></p>';
 
-                                    print '<a href="'.$url.'" target="_blank">Register here ></a>';
+                                        print '<p>'.substr($description, 0, 140).'...</p>';
+
+                                        print '<a href="'.$url.'" target="_blank">Register here ></a>';
+
+                                    print '</div>';
 
                                 print '</div>';
 
-                            print '</div>';
+                                // Add the temporary array to the corresponding day of the calendar events array
+                                $calendarEvents[$day]['events'][] = $tempArray;
 
-                            // Add the temporary array to the corresponding day of the calendar events array
-                            $calendarEvents[$day]['events'][] = $tempArray;
+                            }
 
                         }
 

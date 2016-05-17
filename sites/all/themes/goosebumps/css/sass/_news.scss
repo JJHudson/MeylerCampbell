@@ -20,3 +20,18 @@
 	font-size: 14px;
 	font-style: italic;
 }
+
+.news__pagination {
+	margin: 0 0 20px 0;
+	text-align: left;
+	width: 100%;
+
+	.pagination {
+		margin: 0 4px;
+		padding: 0 1px;
+	}
+
+	.pagination--active {
+		border-bottom: 2px $gold solid;
+	}
+}

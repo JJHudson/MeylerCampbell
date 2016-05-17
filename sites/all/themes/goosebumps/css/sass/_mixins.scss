@@ -32,6 +32,10 @@
 	        color: nth($colur-hex, $i);
 	    }
 
+	    .fill--#{$current-color} {
+	    	fill:nth($colur-hex, $i);
+	    }
+
 	    .hover--#{$current-color}:hover {
 	        color: nth($colur-hex, $i);
 	    }

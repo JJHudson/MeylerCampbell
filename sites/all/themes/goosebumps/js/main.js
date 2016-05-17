@@ -9,7 +9,7 @@ var Goosebumps = function(){
 		createGallery();
 		columiser();
 		sizeIframe();
-
+		
 	}
 
 	function bindUI() {
@@ -76,8 +76,8 @@ var Goosebumps = function(){
 			    middle = after;
 			}
 
-			var s1 = s.substr(0, middle);
-			var s2 = s.substr(middle + 1);
+			var s1 = s.substr(0, middle) + '.</p>';
+			var s2 = '<p>' + s.substr(middle + 1);
 
 			$(document.createElement("div")).addClass('grid__col grid__col--2').html(s1).insertBefore($(this));
 		    $(document.createElement("div")).addClass('grid__col grid__col--2').html(s2).insertBefore($(this));
@@ -321,24 +321,11 @@ var Goosebumps = function(){
 
 	function showEventInfo() {
 
-		var data = $(this).attr('data-date'),
-			x = $(this).attr('data-x'),
-			y = $(this).attr('data-y');
+		var data = $(this).attr('data-date');
 
-		if (x == 'left') {
-			$('.event__info-wrapper').css({ 'left':'0'});
-		} else {
-			$('.event__info-wrapper').css({ 'right':'0'});
-		}
-
+		$('.event__info').fadeOut();
 		$('.event__info--' + data).fadeIn();
-
-		//if (y == 'top') {
-			$('.event__info-wrapper').css({ 'top':'-15px'}).fadeIn();
-		//} else {
-			//$('.event__info-wrapper').css({ 'bottom':'0'}).fadeIn();
-		//}
-
+		$('.event__info-wrapper').fadeIn();
 
 	}
 

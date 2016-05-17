@@ -91,7 +91,7 @@
 
                     <div class="grid__col grid__col--2">
 
-                        <a href="<?= $link; ?>" target="_parent" class="color--black hover--gold thought">
+                        <a href="<?= $link; ?>" target="_parent" class="color--black hover--grey thought">
 
                         <?php if( empty($filename) ): ?>
 
@@ -115,13 +115,13 @@
 
                         <p><?= strip_tags($intro); ?></p>
 
-                        <a href="<?= $link; ?>" target="_parent" class="underlined">Find out more</a>
+                        <a href="<?= $link; ?>" target="_parent" class="underlined hover--grey">Find out more</a>
 
                     </div>
 
                     <div class="grid__col grid__col--1">
 
-                        <p class="font-12"><?= $author; ?><br /><br /><em><?= $newsDay . ' ' . $newsMonth . ' ' . $newsYear; ?></em></p>
+                        <p class="font-12"><?= $author; ?><em><?= $newsDay . ' ' . $newsMonth . ' ' . $newsYear; ?></em></p>
 
                     </div>
 
@@ -130,6 +130,47 @@
         <?php
 
             endforeach;
+
+            $articlePerPage = 6;
+            $newsCount = goosebumps_get_node_count('news');
+            $noOfPages = $newsCount / $articlePerPage;
+            $currentPageNo = $_GET['page'];
+
+            // Check to see if pagination is needed
+            if($noOfPages > $articlePerPage) {
+
+                // Print the wrapper
+                print '<div class="news__pagination">';
+
+                // Loop through each page
+                for($i=0;$i<$noOfPages;$i++){
+
+                    // check to see if this is the current page, if so add an active class
+                    if($i === intval($currentPageNo)) {
+                        $class = "pagination pagination--active";
+                    } else {
+                        $class = "pagination";
+                    }
+
+                    // check to see if the current page is the first page, if so slightly alter the URL
+                    if($i === 0) {
+                        print '<a href="'.base_path().'news" class="'.$class.'">';
+                    } else {
+                        print '<a href="'.base_path().'news?page='.$i.'" class="'.$class.'">';
+                    }
+                    
+                    // prin the page number
+                    print $i + 1;
+
+                    // close the anchor tag
+                    print '</a>';
+
+                }
+
+                // close the pagination wrapper
+                print '</div>';
+
+            }
 
         ?>
 

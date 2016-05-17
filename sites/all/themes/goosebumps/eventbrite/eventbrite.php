@@ -14,6 +14,7 @@
       $uri = $this->build_uri($method, $args);
       // Construct the full URL.
       $request_url = $this->endpoint . $uri;
+
       // This array is used to authenticate our request.
       $options = array(
         'http' => array(
@@ -22,7 +23,8 @@
         )
       );
       // Call the URL and get the data.
-      $resp = file_get_contents($request_url, false, stream_context_create($options));
+      $resp = file_get_contents($request_url);
+
       // Return it as arrays/objects.
       return json_decode($resp);
     }
@@ -37,6 +39,7 @@
       $vars = get_defined_vars();
       // Put them together with a slash.
       $uri = implode($vars, '/');
+
       return $uri;
     }
 

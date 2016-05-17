@@ -1,12 +1,12 @@
 .logo-home {
 	fill: $white;
-	height: 151.45px;
+	height: 125.83px;
 	position: relative;
 	top: 30px;
 	-ms-transition: fill 500ms;
 	-webkit-transition: fill 500ms;
 	transition: fill 500ms;
-	width: 220px;
+	width: 170px;
 
 	&.logo-home__fixed {
 		position: fixed;
@@ -24,28 +24,29 @@
 	@include media('<tablet') {
 		fill: $black !important;
 		float: left;
-		height: 97.61px;
+		height: 81.61px;
 		padding: 0 0 15px 0;
 		position: relative !important;
-		top: 0 !important;
-		width: 120px;
+		top: 0px !important;
+		width: 90px;
 	}
 }
 
 .logo-main {
 	fill: $black;
-	height: 151.45px;
+	height: 125.83px;
 	position: relative;
 	top: 0;
 	-ms-transition: fill 500ms;
 	-webkit-transition: fill 500ms;
 	transition: fill 500ms;
-	width: 220px;
+	width: 170px;
 
 	@include media('<tablet') {
 		float: left;
-		height: 97.61px;
-		width: 120px;
+		height: 81.61px;
+		top: 0px !important;
+		width: 90px;
 	}
 }
 
@@ -174,8 +175,3 @@
 		display: none;
 	}
 }
-
-
-
-
-
