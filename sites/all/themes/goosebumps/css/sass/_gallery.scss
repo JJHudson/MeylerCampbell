@@ -7,11 +7,24 @@
 }
 
 .gallery__arrows {
+	color: $white !important;
+	bottom: 20px;
 	position: absolute;
 	right: 30px;
-	bottom: 20px;
+
+	@include media('<tablet') {
+		bottom: auto;
+		color: $black !important;
+		padding-top: 17px;
+		position: relative;
+		right: 0;
+	}
 }
 
 .gallery__arrow {
 	cursor: pointer;
+
+	@include media('<tablet') {
+		color: $black !important;
+	}
 }

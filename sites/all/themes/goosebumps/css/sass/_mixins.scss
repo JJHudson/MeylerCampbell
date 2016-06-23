@@ -66,25 +66,29 @@
 
 	@font-face {
 	  font-family: 'Avenir';
-	  src: url('fonts/avenir.woff') format('woff'),
+	  src: url('fonts/avenir.woff2') format('woff2')
+	  	   url('fonts/avenir.woff') format('woff'),
 	       url('fonts/avenir.ttf') format('truetype');
 	}
 
 	@font-face {
 	  font-family: 'TGLight';
-	  src: url('fonts/tg_light.woff') format('woff'),
+	  src: url('fonts/tg_light.woff2') format('woff2'),
+	  	   url('fonts/tg_light.woff') format('woff'),
 	       url('fonts/tg_light.ttf') format('truetype');
 	}
 
 	@font-face {
 	  font-family: 'TGCondensed';
-	  src: url('fonts/tg_condensed.woff') format('woff'),
+	  src: url('fonts/tg_condensed.woff2') format('woff2'),
+	  	   url('fonts/tg_condensed.woff') format('woff'),
 	       url('fonts/tg_condensed.ttf') format('truetype');
 	}
 
 	@font-face {
 	  font-family: 'TGBold';
-	  src: url('fonts/tg_bold.woff') format('woff'),
+	  src: url('fonts/tg_bold.woff2') format('woff2'),
+	  	   url('fonts/tg_bold.woff') format('woff'),
 	       url('fonts/tg_bold.ttf') format('truetype');
 	}
 

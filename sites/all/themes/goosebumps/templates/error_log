@@ -33,3 +33,10 @@
 [13-May-2016 13:53:57 UTC] PHP Fatal error:  Call to undefined function base_path() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/content_calendar.php on line 106
 [13-May-2016 13:53:58 UTC] PHP Fatal error:  Call to undefined function base_path() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/content_calendar.php on line 106
 [13-May-2016 13:54:15 UTC] PHP Fatal error:  Call to undefined function base_path() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/content_calendar.php on line 106
+[23-May-2016 14:54:32 UTC] PHP Fatal error:  Call to undefined function views_get_view_result() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 3
+[23-May-2016 14:54:33 UTC] PHP Fatal error:  Call to undefined function views_get_view_result() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 3
+[23-May-2016 14:56:59 UTC] PHP Fatal error:  Call to undefined function views_get_view_result() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 5
+[23-May-2016 14:57:00 UTC] PHP Fatal error:  Call to undefined function views_get_view_result() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 5
+[23-May-2016 14:57:01 UTC] PHP Fatal error:  Call to undefined function views_get_view_result() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 5
+[23-May-2016 14:57:33 UTC] PHP Fatal error:  Call to undefined function base_path() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 12
+[23-May-2016 14:57:34 UTC] PHP Fatal error:  Call to undefined function base_path() in /home/goosebumps/public_html/dev/meylercampbell/sites/all/themes/goosebumps/templates/insight.php on line 12

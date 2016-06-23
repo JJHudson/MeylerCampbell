@@ -101,7 +101,7 @@
 	@include media('<tablet') {
 		left: 0;
 		height: 100%;
-		top: -100% !important;
+		top: -200% !important;
 		width: 100%;
 
 		&.nav--mobile {
@@ -142,6 +142,10 @@
 
  		text-align: center;
  		width: 100%;
+ 	}
+
+ 	.menu {
+ 		display: none;
  	}
 
 }

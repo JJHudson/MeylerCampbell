@@ -47,7 +47,7 @@
     <!-- ********** NEWS ********** -->
     <section class="section section--calendar fade fade--up">
 
-        <iframe class="news-iframe" src="<?= base_path(); ?>/news" height="500" width="100%" allowfullscreen="" scrolling="no" frameborder="0"></iframe>
+        <iframe class="news-iframe" src="<?= base_path(); ?>news" height="500" width="100%" allowfullscreen="" scrolling="no" frameborder="0"></iframe>
 
     </section>
 
@@ -56,7 +56,7 @@
     <!-- ********** CALENDAR ********** -->
     <section class="section section--calendar fade fade--up">
 
-        <iframe class="connected-iframe" src="<?= base_path(); ?>/calendar" height="500" width="100%" allowfullscreen="" scrolling="no" frameborder="0"></iframe>
+        <iframe class="connected-iframe" src="<?= base_path(); ?>calendar" height="500" width="100%" allowfullscreen="" scrolling="no" frameborder="0"></iframe>
 
     </section>
 

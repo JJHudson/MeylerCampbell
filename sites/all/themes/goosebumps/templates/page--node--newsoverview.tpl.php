@@ -133,11 +133,11 @@
 
             $articlePerPage = 6;
             $newsCount = goosebumps_get_node_count('news');
-            $noOfPages = $newsCount / $articlePerPage;
+            $noOfPages = ceil($newsCount / $articlePerPage);
             $currentPageNo = $_GET['page'];
 
             // Check to see if pagination is needed
-            if($noOfPages > $articlePerPage) {
+            if($noOfPages > 1) {
 
                 // Print the wrapper
                 print '<div class="news__pagination">';

@@ -107,7 +107,7 @@ $nodeID = node_load($node->nid);
 
 				    			<?php if( empty($person['filename']) || $roleType === 'Governance & Supervision' ): ?>
 
-				    				<img src="<?= base_path(); ?>/sites/default/files/sizer.png" width="100%" alt="<?= $person['name']; ?>" class="person__image" />
+				    				<img src="<?= base_path(); ?>sites/default/files/sizer.png" width="100%" alt="<?= $person['name']; ?>" class="person__image" />
 				    				<div class="person__overlay person__overlay--visible">
 
 				    			<?php else: ?>

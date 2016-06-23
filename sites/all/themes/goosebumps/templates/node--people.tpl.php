@@ -1,6 +1,6 @@
 <?php 
 
-$nodeID = node_load($node->nid);
+$nodeID = node_load($node->nid);	
 
 $name = $nodeID->title;
 $job = $nodeID->field_job_title['und'][0]['value'];
@@ -11,6 +11,8 @@ $filename = $nodeID->field_profile_picture['und'][0]['filename'];
 $image = base_path().'sites/default/files/styles/profile/public/'.$filename;
 
 ?>
+
+<div class="node-type" data-node="<?= $nodeID->type; ?>"></div>
 
 <!-- ********** CONTAINER ********** -->
 <div class="container">
@@ -36,19 +38,24 @@ $image = base_path().'sites/default/files/styles/profile/public/'.$filename;
 
                 <div class="grid__col grid__col--5">
 
-					<h2 class="title title--medium title--light">
+					<?php if($role === 'Faculty'): ?>
 
-						<?php if($role === 'Faculty'): ?>
+						<h2 class="title title--medium title--light title--quote">
 
-							“<?= $nodeID->field_quote['und'][0]['value']; ?>”
+							<span>“</span><?= $nodeID->field_quote['und'][0]['value']; ?>”
 
-						<?php else: ?>
+						</h2>
+
+					<?php else: ?>
+
+						<h2 class="title title--medium title--light">
 
 							<?= $role; ?><br />
 							<span class="color--gold"><?= strip_tags($job); ?></span>
 
-						<?php endif; ?>
-					</h2>
+						</h2>
+
+					<?php endif; ?>
 
                 </div>
 

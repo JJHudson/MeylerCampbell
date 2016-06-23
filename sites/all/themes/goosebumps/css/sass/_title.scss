@@ -87,6 +87,20 @@
 	font-family: $tg_bold;
 }
 
+.title--quote {
+	padding-left: 30px;
+	position: relative;
+
+	span {
+		left: 0;
+		position: absolute;
+	}
+
+	@include media('<tablet') {
+		padding-left: 10px;
+	}
+}
+
 .font-12 {
 	font-size: 12px;
 

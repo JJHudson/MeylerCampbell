@@ -196,7 +196,7 @@ $wwww_intro = $nodeID->field_wwww_intro['und'][0]['value'];
 
                         <div class="grid__row grid__row--partners grid__row--underlined">
 
-                            <h3 class="title title--xsmall title--light"><?= $key; ?>s</h3>
+                            <h3 class="title title--xsmall title--light"><?= $key; ?></h3>
 
                             <?php foreach ($partner as $partnerKey => $partnerLogo): ?>
 

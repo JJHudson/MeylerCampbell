@@ -40,6 +40,10 @@
 			@include line-height(55);
 			padding: 20px 0 0 0;
 		}
+
+		.event__titles {
+			top: 52%;
+		}
 	}
 
 	// Select every first and third item in a row of five and change the colour
@@ -102,6 +106,12 @@
 	top: 0;
 }
 
+.event__image {
+	@include media('<tablet') {
+		display: none;
+	}
+}
+
 .event__info-wrapper {
 	@include font-size(15);
 	@include line-height(18);
@@ -157,7 +167,7 @@
 	letter-spacing: 0;
 	position: absolute;
 	text-align: center;
-	top: 56%;
+	top: 49%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	width: 100%;
@@ -184,7 +194,7 @@
   		padding-right: $size + px;
 
   		.event__titles {
-			padding-left: $size / 2 + px;			
+			margin-left: $size / 2 + px;			
 		}
 
 		@include media('<tablet') {
@@ -193,41 +203,57 @@
 			padding-right: $size / 2 + px;
 
 			.event__titles {
-				padding-left: $size / 4 + px;			
+				margin-left: $size / 4 + px;			
 			}
 
 		}
 
 	}
 
-	.calendar__item--01 { @include letter-spacing(8); }
-	.calendar__item--02 { @include letter-spacing(3); }
-	.calendar__item--03 { @include letter-spacing(4); }
-	.calendar__item--04 { @include letter-spacing(0); }
-	.calendar__item--05 { @include letter-spacing(3); }
-	.calendar__item--06 { @include letter-spacing(2); }
-	.calendar__item--07 { @include letter-spacing(6); }
-	.calendar__item--08 { @include letter-spacing(5); }
-	.calendar__item--09 { @include letter-spacing(2); }
-	.calendar__item--10 { @include letter-spacing(17); }
-	.calendar__item--11 { @include letter-spacing(25); }
-	.calendar__item--12 { @include letter-spacing(20); }
-	.calendar__item--13 { @include letter-spacing(20); }
-	.calendar__item--14 { @include letter-spacing(17); }
-	.calendar__item--15 { @include letter-spacing(20); }
-	.calendar__item--16 { @include letter-spacing(19); }
-	.calendar__item--17 { @include letter-spacing(20); }
-	.calendar__item--18 { @include letter-spacing(20); }
-	.calendar__item--19 { @include letter-spacing(20); }
-	.calendar__item--20 { @include letter-spacing(5); }
-	.calendar__item--21 { @include letter-spacing(10); }
-	.calendar__item--22 { @include letter-spacing(4); }
-	.calendar__item--23 { @include letter-spacing(5); }
-	.calendar__item--24 { @include letter-spacing(10); }
-	.calendar__item--25 { @include letter-spacing(6); }
-	.calendar__item--26 { @include letter-spacing(5); }
-	.calendar__item--27 { @include letter-spacing(8); }
-	.calendar__item--28 { @include letter-spacing(5); }
-	.calendar__item--29 { @include letter-spacing(5); }
-	.calendar__item--30 { @include letter-spacing(6); }
-	.calendar__item--31 { @include letter-spacing(12); }
+	@mixin overlay-spacing($size) {
+
+		.event__titles {
+			margin-left: $size / 2 + px;			
+		}
+
+		@include media('<tablet') {
+
+			.event__titles {
+				margin-left: $size / 4 + px;			
+			}
+
+		}
+
+	}
+
+	.calendar__item--strange.calendar__item--01 { @include letter-spacing(8); @include overlay-spacing(-15); }
+	.calendar__item--strange.calendar__item--02 { @include letter-spacing(3); }
+	.calendar__item--strange.calendar__item--03 { @include letter-spacing(4); }
+	.calendar__item--strange.calendar__item--04 { @include letter-spacing(0); }
+	.calendar__item--strange.calendar__item--05 { @include letter-spacing(3); }
+	.calendar__item--strange.calendar__item--06 { @include letter-spacing(2); }
+	.calendar__item--strange.calendar__item--07 { @include letter-spacing(6); @include overlay-spacing(1); }
+	.calendar__item--strange.calendar__item--08 { @include letter-spacing(5); }
+	.calendar__item--strange.calendar__item--09 { @include letter-spacing(2); }
+	.calendar__item--strange.calendar__item--10 { @include letter-spacing(17); }
+	.calendar__item--strange.calendar__item--11 { @include letter-spacing(25); @include overlay-spacing(0); }
+	.calendar__item--strange.calendar__item--12 { @include letter-spacing(20); @include overlay-spacing(5); }
+	.calendar__item--strange.calendar__item--13 { @include letter-spacing(20); }
+	.calendar__item--strange.calendar__item--14 { @include letter-spacing(17); }
+	.calendar__item--strange.calendar__item--15 { @include letter-spacing(20); }
+	.calendar__item--strange.calendar__item--16 { @include letter-spacing(19); }
+	.calendar__item--strange.calendar__item--17 { @include letter-spacing(20); }
+	.calendar__item--strange.calendar__item--18 { @include letter-spacing(20); }
+	.calendar__item--strange.calendar__item--19 { @include letter-spacing(20); }
+	.calendar__item--strange.calendar__item--20 { @include letter-spacing(5); }
+	.calendar__item--strange.calendar__item--21 { @include letter-spacing(10); }
+	.calendar__item--strange.calendar__item--22 { @include letter-spacing(4); }
+	.calendar__item--strange.calendar__item--23 { @include letter-spacing(5); }
+	.calendar__item--strange.calendar__item--24 { @include letter-spacing(10); }
+	.calendar__item--strange.calendar__item--25 { @include letter-spacing(6); }
+	.calendar__item--strange.calendar__item--26 { @include letter-spacing(5); }
+	.calendar__item--strange.calendar__item--27 { @include letter-spacing(8); }
+	.calendar__item--strange.calendar__item--28 { @include letter-spacing(5); }
+	.calendar__item--strange.calendar__item--29 { @include letter-spacing(5); }
+	.calendar__item--strange.calendar__item--30 { @include letter-spacing(6); }
+	.calendar__item--strange.calendar__item--31 { @include letter-spacing(12); }

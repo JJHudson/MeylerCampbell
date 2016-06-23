@@ -22,7 +22,7 @@ $hero_person = views_get_view_result('people_single_faculty_member', $reset = FA
 
     ?>
 
-    <section class="section section--hero" style="background-image: url(<?= base_path().'sites/default/files/'.$heroPic ?>);" >
+    <section class="section section--hero" style="background-image: url(<?= base_path().'sites/default/files/styles/hero/public/'.$heroPic ?>);" >
 
         <div class="quote">
 
@@ -190,13 +190,21 @@ $hero_person = views_get_view_result('people_single_faculty_member', $reset = FA
 
                             $name = $person->_field_data['nid']['entity']->title;
                             $quote = strip_tags($person->_field_data['nid']['entity']->field_quote['und'][0]['value']);
-                            $image = base_path().'sites/default/files/styles/profile/public/'.$person->_field_data['nid']['entity']->field_profile_picture['und'][0]['filename'];
+                            $image = base_path().'sites/default/files/styles/faculty/public/'.$person->_field_data['nid']['entity']->field_profile_picture['und'][0]['filename'];
                             $link = url('node/'. $person->_field_data['nid']['entity']->nid);
 
                     ?>
                             <div class="person gallery__item">
 
-                                <a href="<?= $link; ?>"><img src="<?= $image; ?>" width="100%" alt="<?= $name; ?>" class="person__image" /></a>
+                                <a href="<?= $link; ?>">
+
+                                <?php if($key === 0): ?>                                
+                                    <img src="<?= $image; ?>" width="100%" height="" alt="<?= $name; ?>" class="person__image" />
+                                <?php else: ?>
+                                    <img src="" width="100%" alt="<?= $name; ?>" class="person__image" data-src="<?= $image; ?>" />
+                                <?php endif; ?>
+
+                                </a>
 
                                 <div class="person__bio">
 
@@ -211,7 +219,7 @@ $hero_person = views_get_view_result('people_single_faculty_member', $reset = FA
                                 <div class="gallery__arrows">
                                         
                                     <span class="gallery__arrow color--white hover--gold" data-direction="previous">< Previous</span>
-                                    <span class="color--white"> | </span>
+                                    <span> | </span>
                                     <span class="gallery__arrow color--white hover--gold" data-direction="next"> Next ></span>
                                 
                                 </div>
@@ -291,7 +299,7 @@ $hero_person = views_get_view_result('people_single_faculty_member', $reset = FA
 
                         // Add an element to hold all of the event overlay information
                         print '<div class="event__info-wrapper">';
-                        print '<div class="event__hide hover--gold">+</div>';
+                        print '<div class="event__hide">+</div>';
 
                         // Loop through the events and add the event items to the corresponding day
                         foreach($events->events as $key=>$event) {
@@ -323,7 +331,7 @@ $hero_person = views_get_view_result('people_single_faculty_member', $reset = FA
 
                                 print '<div class="event__info event__info--'.$day.'" >';
 
-                                    print '<img src="'.$logo.'" width="100%" />';
+                                    print '<img class="event__image" src="" data-src="'.$logo.'" width="100%" />';
 
                                     print '<div class="event__copy">';
                                 
@@ -499,7 +507,7 @@ $hero_person = views_get_view_result('people_single_faculty_member', $reset = FA
 
             <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined color--gold">
 
-                <div class="grid__col grid__col--4 testimonials">
+                <div class="grid__col grid__col--5 testimonials">
 
                     <?php
 

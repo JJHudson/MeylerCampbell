@@ -47,6 +47,8 @@ $year = $date[0];
 
 ?>
 
+<div class="node-type" data-node="<?= $nodeID->type; ?>"></div>
+
 <!-- ********** CONTAINER ********** -->
 <div class="container">
 

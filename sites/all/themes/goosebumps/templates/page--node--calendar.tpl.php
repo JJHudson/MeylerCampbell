@@ -105,7 +105,7 @@
 
                     // Add an element to hold all of the event overlay information
                         print '<div class="event__info-wrapper">';
-                        print '<div class="event__hide hover--gold">+</div>';
+                        print '<div class="event__hide">+</div>';
 
                         // Loop through the events and add the event items to the corresponding day
                         foreach($events->events as $key=>$event) {
@@ -137,7 +137,7 @@
 
                                 print '<div class="event__info event__info--'.$day.'" >';
 
-                                    print '<img src="'.$logo.'" width="100%" />';
+                                    print '<img class="event__image" src="" data-src="'.$logo.'" width="100%" />';
 
                                     print '<div class="event__copy">';
                                 
@@ -172,7 +172,7 @@
 
         <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined grid__wrapper--overlined-grey color--grey">
 
-            <div class="grid__col grid__col--5">
+            <div class="grid__col grid__col--5" id="calendar">
 
                     <?php
 

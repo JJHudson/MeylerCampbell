@@ -15,6 +15,8 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
 ?>
 
+<div class="node-type" data-node="what we do"></div>
+
 <!-- ********** CONTAINER ********** -->
 <div class="container">
 
@@ -202,7 +204,7 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
             <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
 
-                <div class="grid__col grid__col--4 testimonials">
+                <div class="grid__col grid__col--5 testimonials">
 
                     <?php
 
