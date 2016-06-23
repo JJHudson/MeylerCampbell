@@ -38,7 +38,7 @@
 
 <div class="container">
 
-	<!-- ********** INTRO SECTION ********** -->
+    <!-- ********** INTRO SECTION ********** -->
     <section class="section section--intro">
 
         <div class="grid__row"> 

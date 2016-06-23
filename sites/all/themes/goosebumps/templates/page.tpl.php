@@ -1,6 +1,6 @@
 <?php
 
-	global $user;
+    global $user;
 
 ?>
 

@@ -20,14 +20,14 @@ $image = base_path() . 'sites/default/files/' . $filename;
 <!-- ********** CONTAINER ********** -->
 <div class="container">
 
-	<!-- ********** INTRO SECTION ********** -->
+    <!-- ********** INTRO SECTION ********** -->
     <section class="section section--intro">
 
         <div class="grid__row"> 
 
             <div class="grid__wrapper grid__wrapper--2 grid__wrapper--no-padding">
 
-	            <a href="<?= base_path(); ?>">
+                <a href="<?= base_path(); ?>">
 
                     <?php if( $type === 'gold'): ?>
                         <svg class="logo logo-main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 297.2 220" xml:space="preserve">
@@ -46,7 +46,7 @@ $image = base_path() . 'sites/default/files/' . $filename;
                     <?php endif; ?>
                 </a>
 
-	            <div class="burger color--black hover--gold">&#9776;</div>
+                <div class="burger color--black hover--gold">&#9776;</div>
 
             </div>
 
@@ -54,9 +54,9 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
                 <div class="grid__col grid__col--5">
 
-					<h2 class="title title--medium title--light title--strong-<?= $type; ?>">
-						<?= $nodeID->field_brief_description['und'][0]['value']; ?>
-					</h2>
+                    <h2 class="title title--medium title--light title--strong-<?= $type; ?>">
+                        <?= $nodeID->field_brief_description['und'][0]['value']; ?>
+                    </h2>
 
                 </div>
 
@@ -69,13 +69,13 @@ $image = base_path() . 'sites/default/files/' . $filename;
     <!-- ********** ABOUT SECTION ********** -->
     <section class="section section--people fade fade--up">
 
-    	<div class="grid__row grid__row--margin-bottom">
+        <div class="grid__row grid__row--margin-bottom">
 
-    		<div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
+            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
 
-    			<h3 class="title title--xsmall">
-    				About <?= $nodeID->title; ?>
-    			</h3>
+                <h3 class="title title--xsmall">
+                    About <?= $nodeID->title; ?>
+                </h3>
 
                  <?php
 
@@ -94,9 +94,9 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
                     ?>
 
-    		</div>
+            </div>
 
-    		<div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
+            <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
 
                 <?php
 
@@ -112,15 +112,15 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
                 ?>
 
-    			<div class="grid__col grid__col--5 columniser">
+                <div class="grid__col grid__col--5 columniser">
 
                     <?= $nodeID->field_about['und'][0]['value']; ?>
 
-    			</div>
+                </div>
 
-    		</div>
+            </div>
 
-    	</div>
+        </div>
 
     </section>
 
@@ -129,17 +129,17 @@ $image = base_path() . 'sites/default/files/' . $filename;
     <!-- ********** STRUCTURE SECTION ********** -->
     <section class="section section--people fade fade--up">
 
-    	<div class="grid__row grid__row--margin-bottom">
+        <div class="grid__row grid__row--margin-bottom">
 
-    		<div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
+            <div class="grid__wrapper grid__wrapper--2 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
 
-    			<h3 class="title title--xsmall">
-    				Programme Structure
-    			</h3>
+                <h3 class="title title--xsmall">
+                    Programme Structure
+                </h3>
 
-    		</div>
+            </div>
 
-    		<div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
+            <div class="grid__wrapper grid__wrapper--5 grid__wrapper--overlined grid__wrapper--overlined-<?= $type; ?>">
 
                 <?php
 
@@ -155,11 +155,11 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
                 ?>
 
-    			<div class="grid__col grid__col--2">
+                <div class="grid__col grid__col--2">
 
                     <?= $nodeID->field_intro['und'][0]['value']; ?>
 
-    			</div>
+                </div>
 
                 <div class="grid__col grid__col--2">
 
@@ -181,9 +181,9 @@ $image = base_path() . 'sites/default/files/' . $filename;
 
                 </div>
 
-    		</div>
+            </div>
 
-    	</div>
+        </div>
 
     </section>
 

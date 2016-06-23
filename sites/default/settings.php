@@ -239,7 +239,7 @@ $databases = array (
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$update_free_access = TRUE;
+$update_free_access = FALSE;
 
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
@@ -360,7 +360,7 @@ ini_set('session.cookie_lifetime', 2000000);
 # $conf['site_name'] = 'My Drupal site';
 # $conf['theme_default'] = 'garland';
 # $conf['anonymous'] = 'Visitor';
-$conf['image_allow_insecure_derivatives'] = TRUE;
+$conf['image_allow_insecure_derivatives'] = FALSE;
 
 /**
  * A custom theme can be set for the offline page. This applies when the site
@@ -601,7 +601,3 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 # $conf['theme_debug'] = TRUE;
 
-error_reporting(-1);  // Have PHP complain about absolutely everything 
-$conf['error_level'] = 2;  // Show all messages on your screen, 2 = ERROR_REPORTING_DISPLAY_ALL.
-ini_set('display_errors', TRUE);  // These lines just give you content on WSOD pages.
-ini_set('display_startup_errors', TRUE);
