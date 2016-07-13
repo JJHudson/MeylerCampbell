@@ -360,7 +360,7 @@ ini_set('session.cookie_lifetime', 2000000);
 # $conf['site_name'] = 'My Drupal site';
 # $conf['theme_default'] = 'garland';
 # $conf['anonymous'] = 'Visitor';
-$conf['image_allow_insecure_derivatives'] = FALSE;
+$conf['image_allow_insecure_derivatives'] = TRUE;
 
 /**
  * A custom theme can be set for the offline page. This applies when the site
